@@ -1,4 +1,10 @@
 // The little card stack in the hero, Break It Down, the stickers, Boone's night shift, and the email sign-up.
+
+// A refresh starts at the top, not wherever the page was left (Colleen, 2026-10-05).
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+const reloaded = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+if (reloaded && location.hash) history.replaceState(null, '', location.pathname + location.search);
+if (reloaded || !location.hash) window.scrollTo(0, 0);
 const CARDS = [
   ['Wake Up', 'wake-up'], ['Coffee', 'coffee'], ['Brush Teeth', 'toothbrush'],
   ['Charge Phone', 'wireless-charging'], ['Send a Text', 'texting'], ['Start Laundry', 'washing-machine'],
