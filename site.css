@@ -184,7 +184,6 @@ footer { background: var(--wood); background-image: repeating-linear-gradient(90
 footer nav a, footer a { color: #2e1f12; font-weight: 700; margin: 0 12px; }
 footer p { margin: 10px 0 0; }
 .fine { font-size: 17px; }
-.private { max-width: 680px; margin: 0 auto; padding: 0 20px 40px; font-size: 17px; color: var(--muted); text-align: center; }
 footer nav { display: flex; flex-wrap: wrap; justify-content: center; }
 footer nav a { display: inline-block; padding: 10px 6px; }
 
@@ -261,7 +260,7 @@ p { text-wrap: pretty; }
   .hero-words .actions { justify-content: flex-start; }
   .stickers .parcel { margin: 0; }
 }
-.bd-more p, .private { text-wrap: balance; }
+.bd-more p { text-wrap: balance; }
 
 /* Cards first, Boone small (Colleen, 2026-10-05): a short strip after the stickers. */
 .dock { padding: 56px 20px; }
@@ -271,17 +270,20 @@ p { text-wrap: pretty; }
 @media (max-width: 860px) { .dock .scene { max-width: 300px; margin: 0 auto; } }
 
 /* Instagram follow button in the crew card (Colleen, 2026-10-05). */
-.follow { position: relative; display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; transition: transform .15s; }
-.follow svg { transition: transform .2s; }
-.follow.nudge svg { animation: nudge 3.5s ease-in-out infinite; }
-.follow:hover { transform: translateY(-2px); }
-.follow:hover svg { transform: rotate(-10deg) scale(1.15); color: #D9548B; }
+.follow { position: relative; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; color: var(--navy); text-decoration: none; transition: transform .15s; }
+.follow img { filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 5px 8px rgba(36, 64, 92, .25)); transform: rotate(-4deg); transition: transform .2s; }
+.follow.nudge img { animation: nudge 3.5s ease-in-out infinite; }
+.follow:hover img { transform: rotate(-10deg) scale(1.08); }
+.follow:active img { transform: rotate(-2deg) scale(.94); }
+.follow-words { display: flex; flex-direction: column; line-height: 1.15; }
+.follow-words i { font: italic 400 18px var(--serif); color: var(--muted); }
+.follow-words b { font: 750 26px var(--serif); letter-spacing: -0.01em; padding: 0 6px; background: linear-gradient(transparent 58%, #f6d27d 58%, #f6d27d 92%, transparent 92%); }
 /* Little hearts float up when the button is tapped or hovered. */
 .heart { position: absolute; left: 50%; top: -4px; z-index: 2; color: #E86A92; font-size: 26px; line-height: 1; pointer-events: none; animation: float-up 1s ease-out forwards; }
 .heart:nth-child(3n) { color: #F2B630; }
 .heart:nth-child(3n+1) { color: #4F86C6; }
 @keyframes float-up { from { opacity: 1; transform: translate(var(--x), 0) scale(.7); } 60% { opacity: 1; } to { opacity: 0; transform: translate(calc(var(--x) * 1.6), -70px) scale(1.2) rotate(var(--r)); } }
-@media (prefers-reduced-motion: reduce) { .heart { display: none; } .follow.nudge svg { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .heart { display: none; } .follow.nudge img { animation: none; } }
 
 /* Store-style buttons in Boone's look. Not the official badges, which can't be used before the app is listed. */
 .store {
@@ -304,3 +306,11 @@ p { text-wrap: pretty; }
 @media (prefers-reduced-motion: reduce) { .store .zz { animation: none; } }
 .actions:has(.store) { row-gap: 26px; }
 footer .marks { max-width: 640px; margin: 10px auto 0; font-size: 12px; line-height: 1.5; opacity: .75; }
+.nowrap { white-space: nowrap; }
+/* On phones the plank seams ran through the links, so the footer goes plain and the links sit in tidy rows. */
+@media (max-width: 600px) {
+  footer { background-image: none; padding: 28px 16px 24px; }
+  footer nav { gap: 2px 22px; max-width: 320px; margin: 0 auto; }
+  footer nav a { margin: 0; padding: 8px 4px; }
+  }
+.paper .insta-rule { margin: 30px auto 22px; max-width: 220px; }
