@@ -44,7 +44,7 @@ const android = /Android/i.test(navigator.userAgent);
 if (android) {
   const cta = document.getElementById('hero-cta');
   cta.textContent = 'Help test Boone';
-  cta.href = 'https://form.jotform.com/262770562820054';
+  cta.href = '/test.html';
   const alt = document.getElementById('hero-alt');
   alt.textContent = 'Or get launch news';
   alt.href = '#crew';
