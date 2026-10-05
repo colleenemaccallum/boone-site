@@ -58,7 +58,7 @@ const scene = document.getElementById('scene');
 const note = document.getElementById('note');
 function shift(night) {
   scene.src = night ? 'img/dock-night-full.jpg' : 'img/dock-day.jpg';
-  note.innerHTML = night ? '<b>Evening shift.</b><i>Still here.</i>' : '<b>Morning shift.</b><i>Coffee first.</i>';
+  note.innerHTML = night ? '<b>Evening shift.</b><i>Still here.</i>' : '<b>Morning shift.</b><i>Boone has his coffee before he looks at anything, including the gull.</i>';
   document.getElementById('dock').classList.toggle('night', night);
 }
 const hour = new Date().getHours();
