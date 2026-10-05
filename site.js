@@ -34,7 +34,8 @@ function move(kind) {
   }, 380);
 }
 
-done.onclick = () => move('done');
+done.classList.add('ask');
+done.onclick = () => { done.classList.remove('ask'); move('done'); };
 later.onclick = () => move('later');
 draw(false);
 
@@ -88,7 +89,10 @@ const steps = document.getElementById('steps');
 split.classList.add('folded');
 steps.inert = true;
 buoy.setAttribute('aria-expanded', 'false');
+const callout = document.getElementById('buoy-callout');
 buoy.addEventListener('click', () => {
+  buoy.classList.add('tapped');
+  callout.classList.add('gone');
   const open = split.classList.toggle('folded') === false;
   steps.inert = !open;
   buoy.setAttribute('aria-expanded', String(open));
@@ -122,3 +126,8 @@ window.addEventListener('deviceorientation', (event) => {
   if (event.gamma === null) return;
   slide(Math.min(Math.max((event.gamma + 45) / 90, 0), 1));
 });
+
+// Say how to make the holo shimmer on this kind of screen.
+if (window.matchMedia('(pointer: coarse)').matches) {
+  document.getElementById('finish-hint').textContent = 'Tilt your phone to make the holo one shimmer.';
+}
