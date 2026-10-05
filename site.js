@@ -1,4 +1,4 @@
-// The little card stack in the hero, Break it down, the stickers, Boone's night shift, and the email sign-up.
+// The little card stack in the hero, Break It Down, the stickers, Boone's night shift, and the email sign-up.
 const CARDS = [
   ['Wake Up', 'wake-up'], ['Coffee', 'coffee'], ['Brush Teeth', 'toothbrush'],
   ['Charge Phone', 'wireless-charging'], ['Send a Text', 'texting'], ['Start Laundry', 'washing-machine'],
@@ -13,7 +13,7 @@ function draw(announce) {
   const empty = cards.length === 0;
   done.disabled = later.disabled = empty;
   if (empty) {
-    stack.innerHTML = `<div class="card big end"><img src="img/boone-mug.png" alt=""><span>That's the day.</span><button class="link" id="again" type="button">Start over</button></div>`;
+    stack.innerHTML = `<div class="card big end"><img src="img/boone-mug.png" alt=""><span>That's it.<br>That's the day.</span><button class="link" id="again" type="button">Start over</button></div>`;
     document.getElementById('again').onclick = () => { cards = [...CARDS]; draw(true); };
     left.textContent = '';
     return;
@@ -81,7 +81,7 @@ document.getElementById('kit-frame').addEventListener('load', () => {
   document.getElementById('thanks').hidden = false;
 });
 
-// Break it down starts folded; the buoy opens the steps and folds them back.
+// Break It Down starts folded; the buoy opens the steps and folds them back.
 document.documentElement.classList.add('js');
 const split = document.getElementById('split');
 const buoy = document.getElementById('buoy');

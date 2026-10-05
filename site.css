@@ -96,7 +96,7 @@ body::before {
 .note b { font: 700 19px/1.2 var(--sans); color: var(--navy); }
 .note i { font: 400 15px/1.4 var(--sans); font-style: normal; color: var(--muted); }
 
-/* Break it down */
+/* Break It Down */
 .breakdown, .stickers { max-width: 1120px; margin: 0 auto; padding: 88px 20px; }
 .section-words { max-width: 560px; }
 .breakdown .section-words { text-align: center; margin: 0 auto 48px; }
