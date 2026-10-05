@@ -215,12 +215,9 @@ body::after { content: ''; position: fixed; inset: 0; background: url(img/grain.
 .tried { max-width: 900px; margin: 0 auto; padding: 8px 20px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .tried p { margin: 0; background: var(--soft); border-radius: 18px; padding: 18px 22px; }
 .tried b { display: block; font-family: var(--serif); color: var(--navy); font-size: 22px; }
-.maker { max-width: 680px; margin: 0 auto; padding: 24px 20px 72px; font-size: 19px; }
-.maker h2 { font-size: clamp(26px, 3.4vw, 34px); }
-.maker p { margin: 0 0 14px; }
 @media (max-width: 860px) { .tried { grid-template-columns: 1fr; } .card.small { width: 100%; max-width: 340px; } }
 /* Words standing alone are centered; words beside a picture line up on the left on wide screens (Colleen, 2026-10-05). */
-.hero-words, .tried p, .dock-words, .section-words, .bd-more, .maker, .paper, .thanks { text-align: center; }
+.hero-words, .tried p, .dock-words, .section-words, .bd-more, .paper, .thanks { text-align: center; }
 .section-words { margin-left: auto; margin-right: auto; }
 .actions, .signup { justify-content: center; }
 .parcel { margin: 0 auto; }
@@ -253,4 +250,13 @@ p { text-wrap: pretty; }
   .hero-words .actions { justify-content: flex-start; }
   .stickers .parcel { margin: 0; }
 }
-.bd-more p, .maker p, .private { text-wrap: balance; }
+.bd-more p, .private { text-wrap: balance; }
+
+/* Cards first, Boone small (Colleen, 2026-10-05): he peeks from the corner of the top card and gets a short strip after the stickers. */
+.demo { position: relative; }
+.hero-boone { position: absolute; z-index: 4; width: 64px; height: auto; top: -58px; left: calc(50% + min(170px, 43vw) - 84px); pointer-events: none; }
+.dock { padding: 56px 20px; }
+@media (min-width: 861px) { .dock { grid-template-columns: minmax(0, 300px) minmax(0, 440px); gap: 48px; } }
+.dock .aside { font-size: 16px; color: var(--muted); margin-top: 6px; }
+.dock.night .aside { color: #c9d4df; }
+@media (max-width: 860px) { .dock .scene { max-width: 300px; margin: 0 auto; } }
