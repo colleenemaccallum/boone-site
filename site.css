@@ -214,3 +214,8 @@ body::after { content: ''; position: fixed; inset: 0; background: url(img/grain.
 .maker h2 { font-size: clamp(26px, 3.4vw, 34px); }
 .maker p { margin: 0 0 14px; }
 @media (max-width: 860px) { .tried { grid-template-columns: 1fr; } .card.small { width: 100%; max-width: 340px; } }
+/* Every block of words is centered, so the page reads the same top to bottom (Colleen, 2026-10-05). */
+.hero-words, .tried p, .dock-words, .section-words, .bd-more, .maker, .paper, .thanks { text-align: center; }
+.section-words { margin-left: auto; margin-right: auto; }
+.actions, .signup { justify-content: center; }
+.parcel { margin: 0 auto; }
