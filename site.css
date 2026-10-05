@@ -294,7 +294,7 @@ p { text-wrap: pretty; }
 .store.iphone { position: relative; padding-right: 34px; }
 .soon-tape {
   position: absolute; top: -9px; right: -16px; padding: 3px 12px; transform: rotate(9deg);
-  background: rgba(255, 253, 248, .92); color: var(--ink); font: 700 12px/1.4 var(--sans); letter-spacing: .02em; white-space: nowrap;
+  background: rgba(255, 253, 248, .92); color: var(--navy); font: 700 12px/1.4 var(--sans); letter-spacing: .02em; white-space: nowrap;
   border-left: 2px dotted rgba(36, 64, 92, .12); border-right: 2px dotted rgba(36, 64, 92, .12); box-shadow: 0 2px 4px rgba(36, 64, 92, .15);
 }
 .store:hover { transform: translateY(-2px); }
