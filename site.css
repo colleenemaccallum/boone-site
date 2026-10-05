@@ -314,3 +314,4 @@ footer .marks { max-width: 640px; margin: 10px auto 0; font-size: 12px; line-hei
   footer nav a { margin: 0; padding: 8px 4px; }
   }
 .paper .insta-rule { margin: 30px auto 22px; max-width: 220px; }
+.brand .wordmark { display: block; height: 31px; width: auto; }
