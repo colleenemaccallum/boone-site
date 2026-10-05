@@ -15,12 +15,12 @@ function draw(announce) {
   if (empty) {
     stack.innerHTML = `<div class="card big end"><img src="img/boone-mug.png" alt=""><span>That's the day.</span><button class="link" id="again" type="button">Start over</button></div>`;
     document.getElementById('again').onclick = () => { cards = [...CARDS]; draw(true); };
-    left.textContent = 'Done.';
+    left.textContent = '';
     return;
   }
   const [name, pic] = cards[0];
   stack.innerHTML = `<div class="card big"><span class="tape"></span><img src="img/${pic}.png" alt=""><span>${name}</span></div><div class="under one"></div><div class="under two"></div>`;
-  left.textContent = announce ? `${name}. ${cards.length} left.` : '';
+  left.textContent = announce ? `${cards.length} left` : '';
 }
 
 function move(kind) {
