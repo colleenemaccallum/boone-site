@@ -190,6 +190,8 @@ footer nav a { display: inline-block; padding: 10px 6px; }
   .arrow { transform: rotate(90deg); }
   .split.folded .arrow { transform: rotate(90deg) scale(.4); }
   .split.folded .card.big { transform: none; }
+  .js .split .steps, .js .split .arrow { transition: max-height .5s, margin .5s, opacity .35s, transform .5s; max-height: 420px; }
+  .split.folded .steps, .split.folded .arrow { max-height: 0; margin: -14px 0; overflow: hidden; }
   .split.folded .steps .card { transform: translateY(-160px) rotate(-4deg) scale(.6); }
   .paper { padding: 40px 22px 32px; }
   .crew-boone { width: 110px; right: -8px; bottom: -40px; }
@@ -219,3 +221,22 @@ body::after { content: ''; position: fixed; inset: 0; background: url(img/grain.
 .section-words { margin-left: auto; margin-right: auto; }
 .actions, .signup { justify-content: center; }
 .parcel { margin: 0 auto; }
+/* Things to try never go unnoticed: a ring that ripples out of the buoy and Done, and a "Tap me" note. */
+.buoy-btn::after, #done.ask::after {
+  content: ''; position: absolute; inset: 4px; border-radius: 50%; border: 3px solid var(--yellow);
+  animation: ripple 1.8s ease-out infinite; pointer-events: none;
+}
+#done { position: relative; }
+#done.ask::after { inset: -4px; border-radius: 22px; }
+.buoy-btn.tapped::after { display: none; }
+@keyframes ripple { 0% { transform: scale(.9); opacity: .9; } 100% { transform: scale(1.5); opacity: 0; } }
+.callout {
+  position: absolute; top: 26px; right: 84px; z-index: 3; background: var(--navy); color: #fff;
+  font: 700 16px var(--sans); padding: 6px 12px; border-radius: 12px; white-space: nowrap;
+  animation: bob 1.6s ease-in-out infinite;
+}
+.callout::after { content: ''; position: absolute; right: -7px; top: 50%; margin-top: -7px; border: 7px solid transparent; border-right: 0; border-left-color: var(--navy); }
+.callout.gone { display: none; }
+@keyframes bob { 50% { transform: translateX(-5px); } }
+.finish-hint, #left { text-align: center; font-weight: 700; color: var(--navy); }
+.hint b { color: var(--navy); }
