@@ -1,25 +1,26 @@
-// The little card stack in the hero, and Boone's night shift.
+// The little card stack in the hero, Boone's night shift, and the email sign-up.
 const CARDS = [
   ['Wake Up', 'wake-up'], ['Coffee', 'coffee'], ['Brush Teeth', 'toothbrush'],
-  ['Charge Phone', 'charging-station'], ['Send a Text', 'texting'], ['Start Laundry', 'laundry'],
+  ['Charge Phone', 'wireless-charging'], ['Send a Text', 'texting'], ['Start Laundry', 'washing-machine'],
 ];
 const stack = document.getElementById('stack');
 const left = document.getElementById('left');
+const done = document.getElementById('done');
+const later = document.getElementById('later');
 let cards = [...CARDS];
 
-function cardHTML([name, pic]) {
-  return `<div class="card big"><span class="tape"></span><img src="img/${pic}.png" alt=""><span>${name}</span></div>`;
-}
-
-function draw() {
-  if (cards.length === 0) {
+function draw(announce) {
+  const empty = cards.length === 0;
+  done.disabled = later.disabled = empty;
+  if (empty) {
     stack.innerHTML = `<div class="card big end"><img src="img/boone-mug.png" alt=""><span>That's the day.</span><button class="link" id="again" type="button">Start over</button></div>`;
-    document.getElementById('again').onclick = () => { cards = [...CARDS]; draw(); };
-    left.textContent = 'Nice work.';
+    document.getElementById('again').onclick = () => { cards = [...CARDS]; draw(true); };
+    left.textContent = 'Done.';
     return;
   }
-  stack.innerHTML = cardHTML(cards[0]) + '<div class="under one"></div><div class="under two"></div>';
-  left.textContent = cards.length === CARDS.length ? 'Try it. Tap Done.' : `${cards.length} left`;
+  const [name, pic] = cards[0];
+  stack.innerHTML = `<div class="card big"><span class="tape"></span><img src="img/${pic}.png" alt=""><span>${name}</span></div><div class="under one"></div><div class="under two"></div>`;
+  left.textContent = announce ? `${name}. ${cards.length} left.` : 'Try it. Tap Done.';
 }
 
 function move(kind) {
@@ -29,15 +30,29 @@ function move(kind) {
   setTimeout(() => {
     const card = cards.shift();
     if (kind === 'later') cards.push(card);
-    draw();
+    draw(true);
   }, 380);
 }
 
-document.getElementById('done').onclick = () => move('done');
-document.getElementById('later').onclick = () => move('later');
-draw();
+done.onclick = () => move('done');
+later.onclick = () => move('later');
+draw(false);
 
-// After 7 pm or before 6 am, Boone is on the night shift. Three taps on the dock swap it.
+// Android visitors can test now; everyone else gets launch news first.
+const android = /Android/i.test(navigator.userAgent);
+if (android) {
+  const cta = document.getElementById('hero-cta');
+  cta.textContent = 'Help test Boone';
+  cta.href = 'https://form.jotform.com/262770562820054';
+  const alt = document.getElementById('hero-alt');
+  alt.textContent = 'Or get launch news';
+  alt.href = '#crew';
+  document.getElementById('top-link').textContent = 'Help test';
+} else {
+  document.getElementById('android-ask').hidden = true;
+}
+
+// From 8 pm to 6 am, like the app, Boone is on the night shift. Three taps on the dock swap it.
 const scene = document.getElementById('scene');
 const note = document.getElementById('note');
 function shift(night) {
@@ -46,7 +61,7 @@ function shift(night) {
   document.getElementById('dock').classList.toggle('night', night);
 }
 const hour = new Date().getHours();
-let night = hour >= 19 || hour < 6;
+let night = hour >= 20 || hour < 6;
 shift(night);
 let taps = 0, tapTimer;
 scene.addEventListener('click', () => {
