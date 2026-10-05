@@ -73,7 +73,9 @@ body::before {
 .demo-buttons { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: min(340px, 86vw); margin-top: 40px; }
 .demo-buttons .btn { padding: 16px 0; }
 .hint { color: var(--muted); margin: 14px 0 0; font-size: 17px; }
-#left { min-height: 44px; }
+/* How many cards are left, as a small soft tag under the buttons (Colleen, 2026-10-05). */
+#left { display: inline-block; min-height: 34px; box-sizing: border-box; margin-top: 18px; padding: 6px 16px; border-radius: 999px; background: var(--soft); font-size: 15px; letter-spacing: .02em; }
+#left:empty { visibility: hidden; padding: 6px 0; }
 
 /* Dock */
 .dock { background: var(--sand); padding: 72px 20px; display: grid; grid-template-columns: minmax(0, 460px) minmax(0, 480px); gap: 56px; justify-content: center; align-items: center; transition: background .4s; }
