@@ -149,14 +149,12 @@ body::after { content: ''; position: fixed; inset: 0; background: url(img/grain.
 .thanks p { margin: 6px 0 0; }
 @media (max-width: 860px) { .thanks { margin: 0 0 60px; } }
 
-/* Hook, comparison and maker note */
-.hook { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--navy); margin: 0; max-width: 520px; }
-.hook span { display: block; font: 16px var(--sans); color: var(--muted); margin-top: 4px; }
+/* Comparison and maker note */
 .quiet { font-weight: 700; display: inline-block; padding: 12px 4px; align-self: center; }
 .tried { max-width: 900px; margin: 0 auto; padding: 8px 20px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .tried p { margin: 0; background: var(--soft); border-radius: 18px; padding: 18px 22px; }
 .tried b { display: block; font-family: var(--serif); color: var(--navy); font-size: 22px; }
-.maker { max-width: 680px; margin: 0 auto; padding: 24px 20px 72px; font-size: 21px; }
+.maker { max-width: 680px; margin: 0 auto; padding: 24px 20px 72px; font-size: 19px; }
+.maker h2 { font-size: clamp(26px, 3.4vw, 34px); }
 .maker p { margin: 0 0 14px; }
-.maker .sign { color: var(--muted); font-size: 18px; }
 @media (max-width: 860px) { .tried { grid-template-columns: 1fr; } .card.small { width: 100%; max-width: 340px; } }
