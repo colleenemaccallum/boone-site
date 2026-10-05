@@ -252,9 +252,7 @@ p { text-wrap: pretty; }
 }
 .bd-more p, .private { text-wrap: balance; }
 
-/* Cards first, Boone small (Colleen, 2026-10-05): he peeks from the corner of the top card and gets a short strip after the stickers. */
-.demo { position: relative; }
-.hero-boone { position: absolute; z-index: 4; width: 64px; height: auto; top: -58px; left: calc(50% + min(170px, 43vw) - 84px); pointer-events: none; }
+/* Cards first, Boone small (Colleen, 2026-10-05): a short strip after the stickers. */
 .dock { padding: 56px 20px; }
 @media (min-width: 861px) { .dock { grid-template-columns: minmax(0, 300px) minmax(0, 440px); gap: 48px; } }
 .dock .aside { font-size: 16px; color: var(--muted); margin-top: 6px; }
