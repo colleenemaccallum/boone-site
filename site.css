@@ -184,7 +184,6 @@ footer { background: var(--wood); background-image: repeating-linear-gradient(90
 footer nav a, footer a { color: #2e1f12; font-weight: 700; margin: 0 12px; }
 footer p { margin: 10px 0 0; }
 .fine { font-size: 17px; }
-.private { max-width: 680px; margin: 0 auto; padding: 0 20px 40px; font-size: 17px; color: var(--muted); text-align: center; }
 footer nav { display: flex; flex-wrap: wrap; justify-content: center; }
 footer nav a { display: inline-block; padding: 10px 6px; }
 
@@ -271,7 +270,7 @@ p { text-wrap: pretty; }
 @media (max-width: 860px) { .dock .scene { max-width: 300px; margin: 0 auto; } }
 
 /* Instagram follow button in the crew card (Colleen, 2026-10-05). */
-.follow { position: relative; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 22px; color: var(--navy); text-decoration: none; transition: transform .15s; }
+.follow { position: relative; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; color: var(--navy); text-decoration: none; transition: transform .15s; }
 .follow img { filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 5px 8px rgba(36, 64, 92, .25)); transform: rotate(-4deg); transition: transform .2s; }
 .follow.nudge img { animation: nudge 3.5s ease-in-out infinite; }
 .follow:hover img { transform: rotate(-10deg) scale(1.08); }
@@ -313,5 +312,5 @@ footer .marks { max-width: 640px; margin: 10px auto 0; font-size: 12px; line-hei
   footer { background-image: none; padding: 28px 16px 24px; }
   footer nav { gap: 2px 22px; max-width: 320px; margin: 0 auto; }
   footer nav a { margin: 0; padding: 8px 4px; }
-  .private { font-size: 15px; padding: 28px 12px 32px; }
-}
+  }
+.paper.insta { max-width: 340px; margin-top: 44px; padding-top: 34px; padding-bottom: 28px; transform: rotate(1.5deg); }
