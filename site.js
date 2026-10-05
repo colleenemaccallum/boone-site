@@ -48,12 +48,6 @@ draw(false);
 // Android visitors can test now; everyone else gets launch news first.
 const android = /Android/i.test(navigator.userAgent);
 if (android) {
-  const cta = document.getElementById('hero-cta');
-  cta.textContent = 'Help test Boone';
-  cta.href = '/test.html';
-  const alt = document.getElementById('hero-alt');
-  alt.textContent = 'Or get launch news';
-  alt.href = '#crew';
   document.getElementById('top-link').textContent = 'Help test';
 } else {
   document.getElementById('android-ask').hidden = true;
