@@ -24,7 +24,7 @@
   const QUERY = { desk: '(min-width: 861px)', phone: '(max-width: 860px)' };
   const ANDROID = /Android/i.test(navigator.userAgent);
   const SCRIPT_WORDS = new Set(['left', 'finish-hint', 'note', 'buoy-callout']);
-  const ANDROID_WORDS = new Set(['hero-cta', 'hero-alt', 'top-link']);
+  const ANDROID_WORDS = new Set(['top-link']);
   const INLINE_OK = new Set(['B', 'I', 'STRONG', 'EM', 'BR', 'A']);
   const WORD_TAGS = new Set(['H1', 'H2', 'H3', 'P', 'A', 'BUTTON', 'FIGCAPTION', 'LI', 'B', 'SPAN']);
   const NAMES = {
