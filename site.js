@@ -20,7 +20,7 @@ function draw(announce) {
   }
   const [name, pic] = cards[0];
   stack.innerHTML = `<div class="card big"><span class="tape"></span><img src="img/${pic}.png" alt=""><span>${name}</span></div><div class="under one"></div><div class="under two"></div>`;
-  left.textContent = announce ? `${name}. ${cards.length} left.` : 'Try it. Tap Done.';
+  left.textContent = announce ? `${name}. ${cards.length} left.` : '';
 }
 
 function move(kind) {
@@ -35,7 +35,7 @@ function move(kind) {
 }
 
 done.classList.add('ask');
-done.onclick = () => { done.classList.remove('ask'); move('done'); };
+done.onclick = () => { done.classList.remove('ask'); document.getElementById('done-callout').classList.add('gone'); move('done'); };
 later.onclick = () => move('later');
 draw(false);
 
