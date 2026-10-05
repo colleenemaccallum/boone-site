@@ -1,4 +1,4 @@
-// The little card stack in the hero, Boone's night shift, and the email sign-up.
+// The little card stack in the hero, Break it down, the stickers, Boone's night shift, and the email sign-up.
 const CARDS = [
   ['Wake Up', 'wake-up'], ['Coffee', 'coffee'], ['Brush Teeth', 'toothbrush'],
   ['Charge Phone', 'wireless-charging'], ['Send a Text', 'texting'], ['Start Laundry', 'washing-machine'],
@@ -78,4 +78,47 @@ document.getElementById('kit-frame').addEventListener('load', () => {
   if (!sent) return;
   signup.hidden = true;
   document.getElementById('thanks').hidden = false;
+});
+
+// Break it down starts folded; the buoy opens the steps and folds them back.
+document.documentElement.classList.add('js');
+const split = document.getElementById('split');
+const buoy = document.getElementById('buoy');
+const steps = document.getElementById('steps');
+split.classList.add('folded');
+steps.inert = true;
+buoy.setAttribute('aria-expanded', 'false');
+buoy.addEventListener('click', () => {
+  const open = split.classList.toggle('folded') === false;
+  steps.inert = !open;
+  buoy.setAttribute('aria-expanded', String(open));
+  buoy.classList.remove('nudge');
+});
+
+// The buoy and the present give a little wiggle once they are on screen, so they get noticed.
+const parcel = document.querySelector('.parcel');
+const seen = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    if (entry.target === buoy && split.classList.contains('folded')) buoy.classList.add('nudge');
+    if (entry.target === parcel) parcel.classList.add('nudge');
+    seen.unobserve(entry.target);
+  });
+}, { threshold: 0.6 });
+seen.observe(buoy);
+seen.observe(parcel);
+
+// Tilting a phone (or moving the pointer over the stickers) slides the holo colors.
+const holo = document.querySelector('.holo .rim');
+const slide = (share) => {
+  holo.style.animation = 'none';
+  holo.style.setProperty('--holo', `${Math.round(share * 150)}%`);
+};
+document.getElementById('finishes').addEventListener('pointermove', (event) => {
+  const box = event.currentTarget.getBoundingClientRect();
+  slide((event.clientX - box.left) / box.width);
+});
+window.addEventListener('deviceorientation', (event) => {
+  if (event.gamma === null) return;
+  slide(Math.min(Math.max((event.gamma + 45) / 90, 0), 1));
 });

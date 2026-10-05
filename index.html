@@ -57,28 +57,66 @@
   </div>
 </section>
 
-<section class="breakdown">
+<section class="breakdown" id="breakdown">
   <div class="section-words">
-    <h2>Take Out Trash is three jobs.</h2>
-    <p>Break it down splits a big card into small ones. You can edit the steps before you keep them.</p>
+    <h2>For the cards you keep putting off.</h2>
+    <p class="sub">Tap the buoy.</p>
   </div>
-  <div class="split">
-    <div class="card big"><img src="img/trash.png" alt=""><span>Take Out Trash</span></div>
+  <div class="split" id="split">
+    <div class="card big">
+      <button class="buoy-btn" id="buoy" type="button" aria-label="Break it down" aria-expanded="true" aria-controls="steps"><svg class="buoy" aria-hidden="true" viewBox="-3 -3 30 30" xmlns="http://www.w3.org/2000/svg"><g opacity=".25" transform="translate(0 .8)"><path d="M4.929 4.929A10 10 0 0 1 19.071 4.929L15.182 8.818A4.5 4.5 0 0 0 8.818 8.818Z" fill="#24405C" stroke="#24405C" stroke-width="4" stroke-linejoin="round"/><path d="M19.071 4.929A10 10 0 0 1 19.071 19.071L15.182 15.182A4.5 4.5 0 0 0 15.182 8.818Z" fill="#24405C" stroke="#24405C" stroke-width="4" stroke-linejoin="round"/><path d="M19.071 19.071A10 10 0 0 1 4.929 19.071L8.818 15.182A4.5 4.5 0 0 0 15.182 15.182Z" fill="#24405C" stroke="#24405C" stroke-width="4" stroke-linejoin="round"/><path d="M4.929 19.071A10 10 0 0 1 4.929 4.929L8.818 8.818A4.5 4.5 0 0 0 8.818 15.182Z" fill="#24405C" stroke="#24405C" stroke-width="4" stroke-linejoin="round"/></g><path d="M4.929 4.929A10 10 0 0 1 19.071 4.929L15.182 8.818A4.5 4.5 0 0 0 8.818 8.818Z" fill="#fff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><path d="M19.071 4.929A10 10 0 0 1 19.071 19.071L15.182 15.182A4.5 4.5 0 0 0 15.182 8.818Z" fill="#fff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><path d="M19.071 19.071A10 10 0 0 1 4.929 19.071L8.818 15.182A4.5 4.5 0 0 0 15.182 15.182Z" fill="#fff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><path d="M4.929 19.071A10 10 0 0 1 4.929 4.929L8.818 8.818A4.5 4.5 0 0 0 8.818 15.182Z" fill="#fff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><path d="M4.929 4.929A10 10 0 0 1 19.071 4.929L15.182 8.818A4.5 4.5 0 0 0 8.818 8.818Z" fill="#F2AE3A" stroke="#1B2733" stroke-width="1.4" stroke-linejoin="round"/><path d="M19.071 4.929A10 10 0 0 1 19.071 19.071L15.182 15.182A4.5 4.5 0 0 0 15.182 8.818Z" fill="#3F6496" stroke="#1B2733" stroke-width="1.4" stroke-linejoin="round"/><path d="M19.071 19.071A10 10 0 0 1 4.929 19.071L8.818 15.182A4.5 4.5 0 0 0 15.182 15.182Z" fill="#F2AE3A" stroke="#1B2733" stroke-width="1.4" stroke-linejoin="round"/><path d="M4.929 19.071A10 10 0 0 1 4.929 4.929L8.818 8.818A4.5 4.5 0 0 0 8.818 15.182Z" fill="#3F6496" stroke="#1B2733" stroke-width="1.4" stroke-linejoin="round"/></svg></button>
+      <img src="img/trash.png" alt=""><span>Take Out Trash</span>
+    </div>
     <svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 22 C 24 6, 48 6, 70 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 7"/><path d="M60 10 L71 18 L59 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <div class="steps">
+    <div class="steps" id="steps" aria-live="polite">
       <div class="card small"><img src="img/plastic-bag.png" alt=""><span>Tie up the trash bag</span></div>
       <div class="card small"><img src="img/garbage.png" alt=""><span>Carry it to the outside bin</span></div>
       <div class="card small"><img src="img/trash-can.png" alt=""><span>Put a new bag in the can</span></div>
     </div>
   </div>
+  <div class="bd-more">
+    <p>That little buoy sits in the corner of every card. It's called <b>Break it down</b>. Each step becomes its own card with its own picture, so you only ever look at the next small thing.</p>
+    <p>Still too big? Tap <b>Tiny steps</b>. Too many? Tap <b>Bigger steps</b>. Change or remove any step you like. When the last one is done, the whole card counts.</p>
+    <p class="fine-print">Everyday cards have steps ready, even offline. For anything else, an AI helper writes the steps (it asks you first), and you get a few free every day.</p>
+  </div>
 </section>
 
 <section class="stickers">
-  <div class="album"><img src="img/sticker-page-crop2.png" alt="A sticker book page called Harbor Nights with nine of twelve stickers collected"></div>
-  <div class="section-words">
-    <h2>Stickers for showing up.</h2>
-    <p>Each day you open Boone, a sticker is waiting. Cards you finish often earn silver, gold and holo edges in your Binder.</p>
-    <p>Nothing to lose. Nothing to buy.</p>
+  <div class="sticker-intro">
+    <div class="section-words">
+      <h2>Stickers for showing up.</h2>
+      <p class="sub">Some of them shimmer.</p>
+      <p>Each day you open Boone, a sticker is waiting. The first set is called Harbor Nights.</p>
+      <p>Every sticker comes in four finishes. The holo ones shimmer when you tilt your phone.</p>
+    </div>
+    <div class="finishes" id="finishes">
+      <figure class="sticker plain">
+        <div class="peel"><span class="line"></span><span class="rim"></span><span class="edge"></span><img src="img/stickers/whale.png" alt=""><span class="sheen"></span></div>
+        <figcaption>Plain</figcaption>
+      </figure>
+      <figure class="sticker silver">
+        <div class="peel"><span class="line"></span><span class="rim"></span><span class="edge"></span><img src="img/stickers/whale.png" alt=""><span class="sheen"></span></div>
+        <figcaption>Silver</figcaption>
+      </figure>
+      <figure class="sticker gold">
+        <div class="peel"><span class="line"></span><span class="rim"></span><span class="edge"></span><img src="img/stickers/whale.png" alt=""><span class="sheen"></span><svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 C11 7 13 9 20 10 C13 11 11 13 10 20 C9 13 7 11 0 10 C7 9 9 7 10 0Z"/></svg></div>
+        <figcaption>Gold</figcaption>
+      </figure>
+      <figure class="sticker holo">
+        <div class="peel"><span class="line"></span><span class="rim"></span><span class="edge"></span><img src="img/stickers/whale.png" alt=""><span class="sheen"></span><svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 C11 7 13 9 20 10 C13 11 11 13 10 20 C9 13 7 11 0 10 C7 9 9 7 10 0Z"/></svg></div>
+        <figcaption>Holo</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="sticker-book">
+    <div class="album"><img src="img/sticker-page-crop2.png" alt="A sticker book page called Harbor Nights with nine of twelve stickers collected"></div>
+    <div class="section-words">
+      <svg class="parcel" viewBox="0 0 40 30" aria-hidden="true"><ellipse cx="20" cy="28.2" rx="17" ry="1.6" fill="rgba(74,46,28,.25)"/><g stroke="#4A2E1C" stroke-width="1.5" stroke-linejoin="round"><rect x="3" y="9" width="34" height="18" rx="2.5" fill="#3F6496"/><rect x="2" y="6" width="36" height="6" rx="2" fill="#2C4A74"/><rect x="17.75" y="6" width="4.5" height="21" fill="#F2AE3A" stroke-width=".75"/><rect x="3" y="16.5" width="34" height="3.5" fill="#F2AE3A" stroke-width=".75"/><path d="M20 6c-3-5-9-6-9-2.5S16 7 20 6z" fill="#F2AE3A"/><path d="M20 6c3-5 9-6 9-2.5S24 7 20 6z" fill="#F2AE3A"/><ellipse cx="20" cy="6" rx="2.2" ry="1.8" fill="#F2AE3A"/></g></svg>
+      <h3>Presents on the dock.</h3>
+      <p>Finishing cards can bring presents too. They wait on Boone's dock, and you don't know what's inside until you open one.</p>
+      <p>Cards you finish often earn silver, gold and holo edges in your Binder.</p>
+      <p>Miss a day and nothing happens. Nothing you've collected is ever taken away.</p>
+    </div>
   </div>
 </section>
 
