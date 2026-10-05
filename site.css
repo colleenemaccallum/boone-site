@@ -291,7 +291,12 @@ p { text-wrap: pretty; }
   background: var(--ink); color: #fff; text-decoration: none; font: 700 18px/1.1 var(--sans);
   box-shadow: 0 3px 0 #0c141c, 0 6px 12px rgba(36, 64, 92, 0.18); transition: transform .12s, box-shadow .12s;
 }
-.store small { font-size: 13px; font-weight: 700; opacity: .75; }
+.store.iphone { position: relative; padding-right: 34px; }
+.soon-tape {
+  position: absolute; top: -9px; right: -16px; padding: 3px 12px; transform: rotate(9deg);
+  background: rgba(255, 253, 248, .92); color: var(--ink); font: 700 12px/1.4 var(--sans); letter-spacing: .02em; white-space: nowrap;
+  border-left: 2px dotted rgba(36, 64, 92, .12); border-right: 2px dotted rgba(36, 64, 92, .12); box-shadow: 0 2px 4px rgba(36, 64, 92, .15);
+}
 .store:hover { transform: translateY(-2px); }
 .store:active { transform: translateY(3px); box-shadow: 0 1px 0 #0c141c, 0 3px 8px rgba(36, 64, 92, 0.2); }
 .store.iphone { background: var(--soft); color: var(--muted); box-shadow: 0 4px 0 var(--soft-lip), 0 8px 16px rgba(36, 64, 92, 0.1); }
