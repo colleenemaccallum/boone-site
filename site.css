@@ -271,4 +271,14 @@ p { text-wrap: pretty; }
 @media (max-width: 860px) { .dock .scene { max-width: 300px; margin: 0 auto; } }
 
 /* Instagram follow button in the crew card (Colleen, 2026-10-05). */
-.follow { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; }
+.follow { position: relative; display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; transition: transform .15s; }
+.follow svg { transition: transform .2s; }
+.follow.nudge svg { animation: nudge 3.5s ease-in-out infinite; }
+.follow:hover { transform: translateY(-2px); }
+.follow:hover svg { transform: rotate(-10deg) scale(1.15); color: #D9548B; }
+/* Little hearts float up when the button is tapped or hovered. */
+.heart { position: absolute; left: 50%; top: -4px; z-index: 2; color: #E86A92; font-size: 26px; line-height: 1; pointer-events: none; animation: float-up 1s ease-out forwards; }
+.heart:nth-child(3n) { color: #F2B630; }
+.heart:nth-child(3n+1) { color: #4F86C6; }
+@keyframes float-up { from { opacity: 1; transform: translate(var(--x), 0) scale(.7); } 60% { opacity: 1; } to { opacity: 0; transform: translate(calc(var(--x) * 1.6), -70px) scale(1.2) rotate(var(--r)); } }
+@media (prefers-reduced-motion: reduce) { .heart { display: none; } .follow.nudge svg { animation: none; } }

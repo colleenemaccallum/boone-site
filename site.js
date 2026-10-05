@@ -142,3 +142,26 @@ window.addEventListener('deviceorientation', (event) => {
 if (window.matchMedia('(pointer: coarse)').matches) {
   document.getElementById('finish-hint').hidden = true;
 }
+
+// The Instagram button wiggles once it's on screen, and lets a few hearts float up when touched.
+const follow = document.getElementById('follow');
+const hearts = () => {
+  for (let i = 0; i < 6; i += 1) {
+    const heart = document.createElement('span');
+    heart.className = 'heart';
+    heart.textContent = '♥';
+    heart.setAttribute('aria-hidden', 'true');
+    heart.style.setProperty('--x', `${Math.round((Math.random() - 0.5) * 160)}px`);
+    heart.style.setProperty('--r', `${Math.round((Math.random() - 0.5) * 50)}deg`);
+    heart.style.animationDelay = `${i * 60}ms`;
+    follow.appendChild(heart);
+    setTimeout(() => heart.remove(), 1200 + i * 60);
+  }
+};
+follow.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse') hearts(); });
+follow.addEventListener('pointerdown', hearts);
+new IntersectionObserver((entries, watcher) => {
+  if (!entries[0].isIntersecting) return;
+  follow.classList.add('nudge');
+  watcher.disconnect();
+}, { threshold: 0.8 }).observe(follow);
