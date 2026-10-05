@@ -216,28 +216,8 @@ body::after { content: ''; position: fixed; inset: 0; background: url(img/grain.
 .tried .ready { background: var(--soft); border-radius: 18px; padding: 22px; }
 .tried p { margin: 0; }
 .tried b { display: block; font-family: var(--serif); color: var(--navy); font-size: 22px; }
-.tried { max-width: 880px; }
-/* A big spread of real card fronts, drawn like Today's cards (Colleen, 2026-10-05). */
-.fan { display: flex; justify-content: center; align-items: center; padding: 18px 0 30px; }
-.fan .card { flex: none; width: 116px; height: 150px; margin-left: -10px; gap: 8px; padding: 10px; font-size: 15px; border-radius: 20px; }
-.fan .card:first-child { margin-left: 0; }
-.fan .card img { width: 60px; height: 60px; }
-.fan .tape { width: 56px; height: 18px; top: -9px; }
-.fan-0 { transform: rotate(-9deg) translateY(10px); z-index: 1; }
-.fan-1 { transform: rotate(-5deg) translateY(2px); z-index: 2; }
-.fan-2 { transform: rotate(-2deg); z-index: 3; }
-.fan-3 { transform: scale(1.14) translateY(-4px); z-index: 7; }
-.fan-4 { transform: rotate(3deg); z-index: 3; }
-.fan-5 { transform: rotate(6deg) translateY(3px); z-index: 2; }
-.fan-6 { transform: rotate(9deg) translateY(10px); z-index: 1; }
-@media (max-width: 700px) {
-  .tried .ready { padding: 22px 12px; }
-  .fan .card { width: 70px; height: 100px; margin-left: -6px; font-size: 11px; gap: 5px; padding: 4px; border-radius: 14px; }
-  .fan .card img { width: 38px; height: 38px; }
-  .fan .tape { width: 40px; height: 14px; top: -7px; }
-  .fan-0, .fan-6 { display: none; }
-  .fan .fan-1 { margin-left: 0; }
-}
+.ready-pics { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; }
+.ready-pics img { width: 52px; height: 52px; padding: 6px; background: #fff; border-radius: 14px; box-shadow: 0 1px 3px rgba(36, 64, 92, .18); }
 @media (max-width: 860px) { .card.small { width: 100%; max-width: 340px; } }
 /* Words standing alone are centered; words beside a picture line up on the left on wide screens (Colleen, 2026-10-05). */
 .hero-words, .tried p, .dock-words, .section-words, .bd-more, .paper, .thanks { text-align: center; }

@@ -161,8 +161,8 @@ def main(path):
     root.start, root.open_end = 0, 0
     out = render(source, root, state)
     if 'href="edits.css"' not in out:
-        out = out.replace('<link rel="stylesheet" href="site.css">',
-                          '<link rel="stylesheet" href="site.css">\n<link rel="stylesheet" href="edits.css">')
+        out = re.sub(r'(<link rel="stylesheet" href="site\.css[^"]*">)',
+                     r'\1\n<link rel="stylesheet" href="edits.css">', out, count=1)
     INDEX.write_text(out)
     EDITS.write_text(css_text(state.get("css", {})))
     print("index.html and edits.css updated")
