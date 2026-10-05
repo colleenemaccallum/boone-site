@@ -1,0 +1,46 @@
+/* Boone's privacy, terms and support pages, in the app's warm paper look. */
+:root {
+  --sky: #edf1f5;
+  --paper: #fffdf8;
+  --edge: #d6dee7;
+  --ink: #1b2733;
+  --muted: #55616e;
+  --blue: #2f5f8a;
+  --soft: #dce4ec;
+}
+* { box-sizing: border-box; }
+html { background: var(--sky); }
+body {
+  margin: 0;
+  padding: 24px 16px 48px;
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 24px 36px;
+  background: var(--paper);
+  border: 1px solid var(--edge);
+  border-radius: 24px;
+  box-shadow: 0 6px 18px rgba(36, 64, 92, 0.12);
+}
+header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+header img { width: 64px; height: auto; }
+h1 { font-size: 30px; line-height: 1.2; margin: 0; }
+h2 { font-size: 22px; margin: 32px 0 8px; }
+h3 { font-size: 18px; margin: 24px 0 4px; }
+p, li { margin: 8px 0; }
+ul { padding-left: 22px; }
+a { color: var(--blue); }
+.updated { color: var(--muted); margin: 4px 0 20px; }
+.short {
+  background: var(--soft);
+  border-radius: 16px;
+  padding: 4px 20px;
+  margin: 20px 0;
+}
+.crisis { border-left: 4px solid var(--blue); padding-left: 14px; }
+nav { max-width: 720px; margin: 20px auto 0; text-align: center; color: var(--muted); }
+nav a { margin: 0 10px; }
+.short h2 { margin-top: 18px; }
