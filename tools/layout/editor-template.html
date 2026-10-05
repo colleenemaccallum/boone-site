@@ -1,0 +1,43 @@
+<title>Boone Site Editor</title>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="editor-site.css">
+<link rel="stylesheet" href="editor.css">
+
+<div class="ed-top" id="top">
+  <div class="ed-name"><img src="img/ship-wheel.svg" alt="">Boone site editor</div>
+  <div class="ed-group"><span>See it on</span>
+    <div class="ed-seg"><button type="button" id="view-desk" aria-pressed="true">Computer</button><button type="button" id="view-phone" aria-pressed="false">Phone</button></div>
+  </div>
+  <div class="ed-group"><span>Changes apply to</span>
+    <select id="scope" aria-label="Changes apply to"><option value="both">Computer and phone</option><option value="size">Computer only</option></select>
+  </div>
+  <div class="ed-seg"><button type="button" id="mode-edit" aria-pressed="true">Edit</button><button type="button" id="mode-try" aria-pressed="false">Try the page</button></div>
+  <div class="ed-group"><button type="button" id="undo">Undo</button><button type="button" id="redo">Redo</button></div>
+  <label class="ed-check"><input type="checkbox" id="show-hidden" checked>Show hidden blocks</label>
+  <button type="button" id="reset">Start over</button>
+  <div class="ed-confirm" id="confirm">Undo every change since the live site?<button type="button" id="confirm-yes">Yes, start over</button><button type="button" id="confirm-no">Keep my changes</button></div>
+  <span class="ed-status" id="status" aria-live="polite"></span>
+  <button type="button" class="ed-send" id="send">Send to Claude</button>
+</div>
+
+<div class="ed-stage" id="stage">
+  <div class="ed-sizer" id="sizer">
+    <div class="site-frame" id="frame">
+      <div class="site" id="site" data-c="root">
+{{SITE}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ed-box hover" id="hover-box"></div>
+<div class="ed-box pick" id="pick-box"><div class="ed-tag"><button type="button" class="ed-grip" id="grip" aria-label="Drag to move">⠿ Move</button><span class="ed-label" id="pick-label"></span></div></div>
+<div class="ed-line" id="drop-line"></div>
+<div class="ed-ghost" id="ghost"></div>
+<div class="ed-panel" id="panel"></div>
+
+<style id="edits"></style>
+<script>window.LIVE_CSS = {{LIVE_CSS}};</script>
+<script src="editor-pre.js"></script>
+<script src="site.js"></script>
+<script src="editor.js"></script>
