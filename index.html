@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boone: your whole day, one card at a time</title>
+<meta name="description" content="Boone turns your to-do list into a short stack of picture cards. See one, do it, flick it away. No streaks, no account.">
+<meta property="og:title" content="Boone: your whole day, one card at a time">
+<meta property="og:description" content="A visual schedule for grown-ups who get stuck on where to start.">
+<meta property="og:image" content="https://getboone.app/img/dock-day.jpg">
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#"><img src="img/ship-wheel.svg" alt="" width="36" height="36">Boone</a>
+  <a class="top-link" href="#crew">Join the crew</a>
+</header>
+
+<section class="hero">
+  <div class="hero-words">
+    <span class="tag">Testers wanted &middot; Android</span>
+    <h1>Your whole day. One card at a time.</h1>
+    <p class="sub">A visual schedule for grown-ups who get stuck on where to start.</p>
+    <p>Boone turns your to-do list into a short stack of picture cards. You only see the top one. Do it, flick it away, and the next one is there.</p>
+    <div class="actions">
+      <a class="btn" href="https://form.jotform.com/262770562820054">Help test Boone</a>
+      <a class="btn soft" href="#crew">Get launch news</a>
+    </div>
+  </div>
+
+  <div class="demo" aria-label="Try the card stack">
+    <div class="stack" id="stack" aria-live="polite"></div>
+    <div class="demo-buttons">
+      <button class="btn soft" id="later" type="button">Later</button>
+      <button class="btn" id="done" type="button">Done &#10003;</button>
+    </div>
+    <p class="hint" id="left">Try it. Tap Done.</p>
+  </div>
+</section>
+
+<section class="dock" id="dock">
+  <figure class="scene">
+    <img id="scene" src="img/dock-day.jpg" alt="Boone the walrus reading on his dock by the water" width="900" height="1125">
+    <figcaption class="note" id="note"><b>Morning shift.</b><i>Nothing's urgent.</i></figcaption>
+  </figure>
+  <div class="dock-words">
+    <h2>Meet Boone.</h2>
+    <p class="sub">A walrus of few words.</p>
+    <p>Boone works on the dock while you work through your cards. He nods when you finish one and naps when it gets late. He never nags and never needs looking after.</p>
+    <p>If you'd rather work alone, one switch sends him home.</p>
+  </div>
+</section>
+
+<section class="breakdown">
+  <div class="section-words">
+    <h2>Stuck on a big one?</h2>
+    <p>One tap on Break it down turns a card like Clean Kitchen into small steps you can actually start. Change the steps before you keep them.</p>
+  </div>
+  <div class="split">
+    <div class="card big"><span class="tape"></span><img src="img/cleaning.png" alt=""><span>Clean Kitchen</span></div>
+    <svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 22 C 24 6, 48 6, 70 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 7"/><path d="M60 10 L71 18 L59 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="steps">
+      <div class="card small s1"><img src="img/dishwasher.png" alt=""><span>Load the Dishwasher</span></div>
+      <div class="card small s2"><img src="img/sponge.png" alt=""><span>Wipe the Counter</span></div>
+      <div class="card small s3"><img src="img/trash-can.png" alt=""><span>Take Out the Trash</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="stickers">
+  <div class="album"><span class="tape"></span><img src="img/sticker-page-crop2.png" alt="A sticker book page called Harbor Nights with nine of twelve stickers collected"></div>
+  <div class="section-words">
+    <h2>Nothing to lose.</h2>
+    <p>No streaks, and nothing ever turns red. Each day you open Boone, a sticker is waiting. Miss a day and nothing happens.</p>
+    <p>Cards you finish often earn silver, gold and holo edges in your Binder.</p>
+  </div>
+</section>
+
+<section class="private">
+  <p><b>Your cards stay on your phone.</b> There's no account, and Boone works offline. Break it down asks before it sends a card's words to our AI helper.</p>
+</section>
+
+<section class="crew" id="crew">
+  <div class="paper">
+    <span class="tape"></span>
+    <img class="crew-boone" src="img/boone-mug.png" alt="" width="189" height="271">
+    <span class="tag">Crew list</span>
+    <h2>Boone needs a crew.</h2>
+    <p>Try Boone before anyone else. Testing runs for two weeks on your own Android phone, and it's free.</p>
+    <a class="btn" href="https://form.jotform.com/262770562820054">Help test Boone</a>
+    <hr>
+    <p class="form-label">Or get one email when Boone launches, then a short note at most once a month.</p>
+    <form class="signup" id="signup" method="post" action="https://app.kit.com/forms/10005040/subscriptions" target="kit-frame">
+      <label for="email" class="sr">Email</label>
+      <input id="email" name="email_address" type="email" placeholder="you@example.com" autocomplete="email" required>
+      <button class="btn" type="submit">Keep me posted</button>
+    </form>
+    <p class="thanks" id="thanks" hidden><b>Almost there.</b> Check your email and tap the button to confirm.</p>
+    <iframe name="kit-frame" id="kit-frame" title="Sign-up" hidden></iframe>
+  </div>
+</section>
+
+<footer>
+  <nav>
+    <a href="https://daniscam-task-card-app.expo.app/support.html">Help</a>
+    <a href="https://daniscam-task-card-app.expo.app/privacy.html">Privacy</a>
+    <a href="https://daniscam-task-card-app.expo.app/terms.html">Terms</a>
+    <a href="https://www.instagram.com/boone.app/">Instagram</a>
+  </nav>
+  <p><a href="mailto:support@getboone.app">support@getboone.app</a></p>
+  <p class="fine">&copy; 2026 Boone</p>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
