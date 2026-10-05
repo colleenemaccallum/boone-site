@@ -269,3 +269,6 @@ p { text-wrap: pretty; }
 .dock .aside { font-size: 16px; color: var(--muted); margin-top: 6px; }
 .dock.night .aside { color: #c9d4df; }
 @media (max-width: 860px) { .dock .scene { max-width: 300px; margin: 0 auto; } }
+
+/* Instagram follow button in the crew card (Colleen, 2026-10-05). */
+.follow { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; }
