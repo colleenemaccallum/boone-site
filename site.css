@@ -81,11 +81,17 @@ body::before {
 .scene { position: relative; margin: 0; }
 .scene img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: bottom; height: auto; border-radius: 24px; border: 8px solid var(--paper); box-shadow: 0 16px 34px rgba(36, 64, 92, .25); transform: rotate(-1.5deg); }
 .note {
-  position: absolute; top: 28px; right: -18px; background: var(--paper); padding: 12px 18px; border-radius: 6px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, .18); transform: rotate(3deg); display: flex; flex-direction: column;
+  position: absolute; top: 28px; right: -18px; background: var(--paper); padding: 16px 20px 14px; border-radius: 24px;
+  box-shadow: 0 2px 0 #e7e1d6, 0 14px 30px rgba(36, 64, 92, .16); display: flex; flex-direction: column; gap: 2px; isolation: isolate;
 }
-.note b { font: 750 24px/1.1 var(--serif); color: var(--navy); }
-.note i { font: italic 15px var(--serif); color: var(--muted); }
+/* The same faint still grain and short tape strip as the notes on Boone's dock in the app. */
+.note::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: url(img/grain.png); opacity: .07; z-index: -1; pointer-events: none; }
+.note::after {
+  content: ''; position: absolute; top: -11px; left: 24px; width: 44px; height: 16px; transform: rotate(-6deg);
+  background: repeating-linear-gradient(90deg, #c9dbec 0 7px, #a9c4de 7px 14px); opacity: .8; border-radius: 2px;
+}
+.note b { font: 700 19px/1.2 var(--sans); color: var(--navy); }
+.note i { font: 400 15px/1.4 var(--sans); font-style: normal; color: var(--muted); }
 
 /* Break it down */
 .breakdown, .stickers { max-width: 1120px; margin: 0 auto; padding: 88px 20px; }
@@ -238,7 +244,7 @@ body::after { content: ''; position: fixed; inset: 0; background: url(img/grain.
 .finish-hint, #left { text-align: center; font-weight: 700; color: var(--navy); }
 .hint b { color: var(--navy); }
 .promise { max-width: 680px; margin: 0 auto; padding: 8px 20px 56px; text-align: center; font: 700 clamp(22px, 2.6vw, 28px)/1.3 var(--serif); color: var(--navy); }
-.note i { max-width: 220px; }
+.note i { max-width: 250px; }
 @media (max-width: 1000px) { .crew-boone { position: static; display: block; width: 110px; margin: 0 auto 8px; } }
 h1, h2, h3, .sub, .promise, .tried b { text-wrap: balance; }
 p { text-wrap: pretty; }
