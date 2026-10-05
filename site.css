@@ -212,10 +212,13 @@ body::after { content: ''; position: fixed; inset: 0; background: url(img/grain.
 
 /* Comparison and maker note */
 .quiet { font-weight: 700; display: inline-block; padding: 12px 4px; align-self: center; }
-.tried { max-width: 900px; margin: 0 auto; padding: 8px 20px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.tried p { margin: 0; background: var(--soft); border-radius: 18px; padding: 18px 22px; }
+.tried { max-width: 560px; margin: 0 auto; padding: 8px 20px 56px; }
+.tried .ready { background: var(--soft); border-radius: 18px; padding: 22px; }
+.tried p { margin: 0; }
 .tried b { display: block; font-family: var(--serif); color: var(--navy); font-size: 22px; }
-@media (max-width: 860px) { .tried { grid-template-columns: 1fr; } .card.small { width: 100%; max-width: 340px; } }
+.ready-pics { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; }
+.ready-pics img { width: 52px; height: 52px; padding: 6px; background: #fff; border-radius: 14px; box-shadow: 0 1px 3px rgba(36, 64, 92, .18); }
+@media (max-width: 860px) { .card.small { width: 100%; max-width: 340px; } }
 /* Words standing alone are centered; words beside a picture line up on the left on wide screens (Colleen, 2026-10-05). */
 .hero-words, .tried p, .dock-words, .section-words, .bd-more, .paper, .thanks { text-align: center; }
 .section-words { margin-left: auto; margin-right: auto; }
