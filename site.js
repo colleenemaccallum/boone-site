@@ -112,13 +112,18 @@ const seen = new IntersectionObserver((entries) => {
 seen.observe(buoy);
 seen.observe(parcel);
 
-// Tilting a phone (or moving the pointer over the stickers) slides the holo colors.
+// The holo colors roll on their own; tilting a phone (where the browser allows it)
+// or moving the pointer over the stickers slides them by hand for a moment.
 const holo = document.querySelector('.holo .rim');
+let rollAgain;
 const slide = (share) => {
   holo.style.animation = 'none';
   holo.style.setProperty('--holo', `${Math.round(share * 150)}%`);
+  clearTimeout(rollAgain);
+  rollAgain = setTimeout(() => { holo.style.animation = ''; }, 1500);
 };
 document.getElementById('finishes').addEventListener('pointermove', (event) => {
+  if (event.pointerType !== 'mouse') return;
   const box = event.currentTarget.getBoundingClientRect();
   slide((event.clientX - box.left) / box.width);
 });
@@ -127,7 +132,7 @@ window.addEventListener('deviceorientation', (event) => {
   slide(Math.min(Math.max((event.gamma + 45) / 90, 0), 1));
 });
 
-// Say how to make the holo shimmer on this kind of screen.
+// Phones don't need a hint: the holo colors roll on their own.
 if (window.matchMedia('(pointer: coarse)').matches) {
-  document.getElementById('finish-hint').textContent = 'Tilt your phone to make the holo one shimmer.';
+  document.getElementById('finish-hint').hidden = true;
 }
