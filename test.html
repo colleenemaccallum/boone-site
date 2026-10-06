@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Help test Boone</title>
 <meta name="description" content="Try an early version of Boone on your Android phone for two weeks.">
+<meta property="og:title" content="Help test Boone">
+<meta property="og:description" content="Try an early version of Boone on your Android phone for two weeks.">
+<meta property="og:image" content="https://getboone.app/img/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://getboone.app/test.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Help test Boone">
+<meta name="twitter:description" content="Try an early version of Boone on your Android phone for two weeks.">
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="site.css">
@@ -13,7 +22,7 @@
 <body>
 
 <header class="top">
-  <a class="brand" href="/"><img src="img/ship-wheel.svg" alt="" width="36" height="36">Boone</a>
+  <a class="brand" href="/"><img src="img/ship-wheel.svg" alt="" width="36" height="36"><img class="wordmark" src="img/boone-wordmark.svg" alt="Boone" width="96" height="31"></a>
   <a class="top-link" href="/">Home</a>
 </header>
 
@@ -26,6 +35,12 @@
     <form id="tester" method="post" action="https://submit.jotform.com/submit/262770562820054" target="jotform-frame" novalidate>
       <input type="hidden" name="formID" value="262770562820054">
       <input type="hidden" name="simple_spc" value="262770562820054-262770562820054">
+      <input type="hidden" name="jsExecutionTracker" id="js-tracker" value="">
+      <input type="hidden" name="submitSource" value="form">
+      <input type="hidden" name="submitDate" id="submit-date" value="">
+      <input type="hidden" name="buildDate" value="1791212105601">
+      <input type="hidden" name="eventObserver" value="1">
+      <input type="hidden" name="website" value="">
 
       <fieldset class="q">
         <legend>Are you 18 or older and living in the US?</legend>
@@ -59,62 +74,12 @@
           <input type="email" name="q8_q8_email6" autocomplete="email">
         </label>
 
-        <fieldset class="q">
-          <legend>Would you be up for one 20-minute video call where we watch you try Boone for the first time?</legend>
-          <div class="chips">
-            <label><input type="radio" name="q9_q9_radio7" value="Yes" required><span>Yes</span></label>
-            <label><input type="radio" name="q9_q9_radio7" value="Maybe"><span>Maybe</span></label>
-            <label><input type="radio" name="q9_q9_radio7" value="No thanks"><span>No thanks</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset class="q">
-          <legend>Can we ask two optional questions about how you plan your day?</legend>
-          <div class="chips">
-            <label><input type="radio" name="q11_q11_radio9" value="Yes" required><span>Sure</span></label>
-            <label><input type="radio" name="q11_q11_radio9" value="Skip"><span>Skip</span></label>
-          </div>
-        </fieldset>
-
-        <div id="screening" hidden>
-          <fieldset class="q">
-            <legend>Which sound like you? <small>Pick any.</small></legend>
-            <div class="chips list">
-              <label><input type="checkbox" name="q12_q12_checkbox10[]" value="Long to-do lists make me freeze"><span>Long to-do lists make me freeze</span></label>
-              <label><input type="checkbox" name="q12_q12_checkbox10[]" value="Starting a task is the hard part"><span>Starting a task is the hard part</span></label>
-              <label><input type="checkbox" name="q12_q12_checkbox10[]" value="I lose track of what's next"><span>I lose track of what's next</span></label>
-              <label><input type="checkbox" name="q12_q12_checkbox10[]" value="I'd rather see one thing than twenty"><span>I'd rather see one thing than twenty</span></label>
-              <label><input type="checkbox" name="q12_q12_checkbox10[]" value="I've tried lots of planner apps"><span>I've tried lots of planner apps</span></label>
-              <label><input type="checkbox" name="q12_q12_checkbox10[]" value="None of these"><span>None of these</span></label>
-            </div>
-          </fieldset>
-          <fieldset class="q">
-            <legend>What do you use now to keep track of your day? <small>Pick any.</small></legend>
-            <div class="chips list">
-              <label><input type="checkbox" name="q13_q13_checkbox11[]" value="Nothing really"><span>Nothing really</span></label>
-              <label><input type="checkbox" name="q13_q13_checkbox11[]" value="Paper or sticky notes"><span>Paper or sticky notes</span></label>
-              <label><input type="checkbox" name="q13_q13_checkbox11[]" value="Phone notes or reminders"><span>Phone notes or reminders</span></label>
-              <label><input type="checkbox" name="q13_q13_checkbox11[]" value="A planner app"><span>A planner app</span></label>
-            </div>
-            <input type="hidden" name="q13_q13_checkbox11[other]" id="other-flag" disabled value="other">
-            <label class="sub-q">Something else
-              <input type="text" name="q13_q13_checkbox11[other]" id="other-text">
-            </label>
-          </fieldset>
-        </div>
-
-        <label class="q">How did you hear about Boone? <small>Optional.</small>
-          <input type="text" name="q15_q15_textbox13">
-        </label>
-        <label class="q">Anything else we should know? <small>Optional.</small>
-          <textarea name="q16_q16_textarea14" rows="3"></textarea>
-        </label>
-
         <div class="chips">
           <label><input type="checkbox" name="q17_q17_checkbox15[]" value="Yes"><span>Also email me when Boone launches</span></label>
         </div>
 
         <p class="gentle" id="missing" hidden>A few answers are still missing. They're marked in yellow.</p>
+        <p class="gentle" id="failed" hidden>That didn't go through. Please try again, or email <a href="mailto:support@getboone.app">support@getboone.app</a>.</p>
         <button class="btn" type="submit" id="send">Send</button>
       </div>
     </form>
@@ -127,7 +92,7 @@
     <iframe name="jotform-frame" id="jotform-frame" title="Sending" hidden></iframe>
   </div>
 
-  <p class="private">Your answers stay private and are used only to pick and run the test. Answers about how you plan your day are deleted once testers are picked, and everything else within 90 days of launch. To have them deleted sooner, email <a href="mailto:support@getboone.app">support@getboone.app</a>.</p>
+  <p class="private">Your answers stay private and are used only to pick and run the test. Everything is deleted within 90 days of launch. To have them deleted sooner, email <a href="mailto:support@getboone.app">support@getboone.app</a>.</p>
 </main>
 
 <footer>
@@ -141,6 +106,6 @@
   <p class="fine">&copy; 2026 Boone</p>
 </footer>
 
-<script src="test.js"></script>
+<script src="test.js?v=1791300444"></script>
 </body>
 </html>

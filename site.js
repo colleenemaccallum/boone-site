@@ -71,14 +71,32 @@ scene.addEventListener('click', () => {
   if (taps === 3) { night = !night; shift(night); taps = 0; }
 });
 
-// The email box sends to Kit in a hidden frame, so visitors stay on the page.
+// The email box sends to Kit and reads Kit's answer, so "thanks" only shows when the sign-up really arrived.
 const signup = document.getElementById('signup');
-let sent = false;
-signup.addEventListener('submit', () => { sent = true; });
-document.getElementById('kit-frame').addEventListener('load', () => {
-  if (!sent) return;
-  signup.hidden = true;
-  document.getElementById('thanks').hidden = false;
+const signupFailed = document.getElementById('signup-failed');
+signup.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const button = signup.querySelector('button');
+  button.disabled = true;
+  signupFailed.hidden = true;
+  try {
+    const response = await fetch(signup.action, { method: 'POST', body: new FormData(signup), headers: { Accept: 'application/json' } });
+    const answer = await response.json();
+    if (answer.status === 'success') {
+      signup.hidden = true;
+      document.getElementById('thanks').hidden = false;
+      return;
+    }
+    // Kit sometimes asks for a quick "I'm not a robot" check first; that page finishes the sign-up.
+    if (answer.status === 'quarantined' && answer.url) {
+      window.location.href = answer.url;
+      return;
+    }
+    signupFailed.hidden = false;
+  } catch {
+    signupFailed.hidden = false;
+  }
+  button.disabled = false;
 });
 
 // Break It Down starts folded; the buoy opens the steps and folds them back.
