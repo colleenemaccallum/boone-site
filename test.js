@@ -54,6 +54,7 @@ form.addEventListener('submit', (event) => {
       show('failed', true);
       return;
     }
+    window.goatcounter?.count?.({ path: 'tester-signed-up', event: true });
     form.hidden = true;
     show('thanks', true);
     document.getElementById('thanks').focus();

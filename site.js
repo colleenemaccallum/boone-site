@@ -83,6 +83,7 @@ signup.addEventListener('submit', async (event) => {
     const response = await fetch(signup.action, { method: 'POST', body: new FormData(signup), headers: { Accept: 'application/json' } });
     const answer = await response.json();
     if (answer.status === 'success') {
+      window.goatcounter?.count?.({ path: 'email-signed-up', event: true });
       signup.hidden = true;
       document.getElementById('thanks').hidden = false;
       return;
