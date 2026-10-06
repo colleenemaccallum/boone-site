@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /sent.html
+Disallow: /tools/
+
+Sitemap: https://getboone.app/sitemap.xml

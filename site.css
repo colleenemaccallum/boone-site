@@ -304,7 +304,7 @@ p { text-wrap: pretty; }
 .store .zz { stroke-width: 1.6; animation: snooze 2.4s ease-in-out infinite; }
 @keyframes snooze { 0%, 100% { opacity: .35; transform: translateY(1px); } 50% { opacity: 1; transform: translateY(-1px); } }
 @media (prefers-reduced-motion: reduce) { .store .zz { animation: none; } }
-.actions:has(.store) { gap: 12px; }
+.actions:has(.store) { gap: 24px 12px; }
 footer .marks { max-width: 640px; margin: 10px auto 0; font-size: 12px; line-height: 1.5; opacity: .75; }
 .nowrap { white-space: nowrap; }
 /* On phones the plank seams ran through the links, so the footer goes plain and the links sit in tidy rows. */
@@ -315,3 +315,4 @@ footer .marks { max-width: 640px; margin: 10px auto 0; font-size: 12px; line-hei
   }
 .paper .insta-rule { margin: 30px auto 22px; max-width: 220px; }
 .brand .wordmark { display: block; height: 31px; width: auto; }
+.signup-failed { margin: 14px 0 0; padding: 12px 16px; border-radius: 14px; background: #fff4dc; font-size: 17px; }
