@@ -1,4 +1,4 @@
-// The little card stack in the hero, Break It Down, the stickers, Boone's night shift, and the email sign-up.
+// The little card stack in the hero, Chart Steps, the stickers, Boone's night shift, and the email sign-up.
 
 // A refresh starts at the top, not wherever the page was left (Colleen, 2026-10-05).
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -100,7 +100,7 @@ signup.addEventListener('submit', async (event) => {
   button.disabled = false;
 });
 
-// Break It Down starts folded; the buoy opens the steps and folds them back.
+// Chart Steps starts folded; the buoy opens the steps and folds them back.
 document.documentElement.classList.add('js');
 const split = document.getElementById('split');
 const buoy = document.getElementById('buoy');
