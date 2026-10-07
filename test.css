@@ -37,3 +37,6 @@ body { background: linear-gradient(var(--paper), var(--sky)); }
 .test .private { max-width: 620px; margin: 28px auto 0; font-size: 16px; color: var(--muted); text-align: center; }
 
 @media (max-width: 600px) { .ask { padding: 40px 20px 28px; } }
+.lost { text-align: center; }
+.lost-boone { display: block; margin: 0 auto 12px; height: auto; }
+.lost .btn { margin-top: 8px; }
