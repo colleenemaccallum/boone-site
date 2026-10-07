@@ -316,3 +316,6 @@ footer .marks { max-width: 640px; margin: 10px auto 0; font-size: 12px; line-hei
 .paper .insta-rule { margin: 30px auto 22px; max-width: 220px; }
 .brand .wordmark { display: block; height: 31px; width: auto; }
 .signup-failed { margin: 14px 0 0; padding: 12px 16px; border-radius: 14px; background: #fff4dc; font-size: 17px; }
+.what-it-is { margin: 0 0 24px; text-align: center; font: 600 20px/1.35 var(--serif); color: var(--navy); text-wrap: balance; }
+.promise:has(+ .for-anyone) { padding-bottom: 8px; }
+.for-anyone { max-width: 680px; margin: 0 auto; padding: 0 20px 56px; text-align: center; font-size: 18px; color: var(--muted); text-wrap: balance; }

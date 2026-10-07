@@ -19,7 +19,7 @@ function draw(announce) {
   const empty = cards.length === 0;
   done.disabled = later.disabled = empty;
   if (empty) {
-    stack.innerHTML = `<div class="card big end"><img src="img/boone-mug.png" alt=""><span>That's it.<br>That's the day.</span><button class="link" id="again" type="button">Start over</button></div>`;
+    stack.innerHTML = `<div class="card big end"><img src="img/boone-mug.webp" alt=""><span>That's it.<br>That's the day.</span><button class="link" id="again" type="button">Start over</button></div>`;
     document.getElementById('again').onclick = () => { cards = [...CARDS]; draw(true); };
     left.textContent = '';
     return;
