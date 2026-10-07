@@ -45,18 +45,24 @@ form.addEventListener('submit', (event) => {
   show('failed', false);
   const send = document.getElementById('send');
   send.disabled = true;
-  // Jotform sends people on to our own /sent.html page. Seeing it in the frame is the only proof the answers arrived.
-  document.getElementById('jotform-frame').addEventListener('load', (loaded) => {
+  // Jotform first shows its own page in the frame, then sends it on to our /sent.html.
+  // Reaching /sent.html is the only proof the answers arrived; if it never comes, say so.
+  const frame = document.getElementById('jotform-frame');
+  const giveUp = setTimeout(() => {
+    frame.removeEventListener('load', checkArrived);
+    send.disabled = false;
+    show('failed', true);
+  }, 30000);
+  function checkArrived() {
     let arrived = false;
-    try { arrived = loaded.target.contentWindow.location.pathname === '/sent.html'; } catch { arrived = false; }
-    if (!arrived) {
-      send.disabled = false;
-      show('failed', true);
-      return;
-    }
+    try { arrived = frame.contentWindow.location.pathname === '/sent.html'; } catch { arrived = false; }
+    if (!arrived) return;
+    clearTimeout(giveUp);
+    frame.removeEventListener('load', checkArrived);
     window.goatcounter?.count?.({ path: 'tester-signed-up', event: true });
     form.hidden = true;
     show('thanks', true);
     document.getElementById('thanks').focus();
-  }, { once: true });
+  }
+  frame.addEventListener('load', checkArrived);
 });
