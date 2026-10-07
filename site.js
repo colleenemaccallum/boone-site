@@ -6,8 +6,8 @@ const reloaded = performance.getEntriesByType('navigation')[0]?.type === 'reload
 if (reloaded && location.hash) history.replaceState(null, '', location.pathname + location.search);
 if (reloaded || !location.hash) window.scrollTo(0, 0);
 const CARDS = [
-  ['Wake Up', 'wake-up'], ['Coffee', 'coffee'], ['Brush Teeth', 'toothbrush'],
-  ['Charge Phone', 'wireless-charging'], ['Send a Text', 'texting'], ['Start Laundry', 'washing-machine'],
+  ['Wake Up', 'wake-up'], ['Coffee', 'coffee'], ['Brush Teeth', 'brush-teeth'],
+  ['Charge Phone', 'charge-phone'], ['Send a Text', 'send-a-text'], ['Start Laundry', 'start-laundry'],
 ];
 const stack = document.getElementById('stack');
 const left = document.getElementById('left');
@@ -25,7 +25,7 @@ function draw(announce) {
     return;
   }
   const [name, pic] = cards[0];
-  stack.innerHTML = `<div class="card big"><span class="tape"></span><img src="img/${pic}.png" alt=""><span>${name}</span></div><div class="under one"></div><div class="under two"></div>`;
+  stack.innerHTML = `<div class="card big"><span class="tape"></span><img src="img/own/${pic}.webp" alt=""><span>${name}</span></div><div class="under one"></div><div class="under two"></div>`;
   left.textContent = announce ? `${cards.length} left` : '';
 }
 
