@@ -319,4 +319,6 @@ footer .marks { max-width: 640px; margin: 10px auto 0; font-size: 12px; line-hei
 .what-it-is { margin: 0 0 24px; text-align: center; font: 600 20px/1.35 var(--serif); color: var(--navy); text-wrap: balance; }
 .promise:has(+ .for-anyone) { padding-bottom: 8px; }
 .for-anyone { max-width: 680px; margin: 0 auto; padding: 0 20px 56px; text-align: center; font-size: 18px; color: var(--muted); text-wrap: balance; }
-.split .card.big img { height: auto; }
+.split .card.big img { width: 150px; height: auto; }
+.stack .card.big img { width: 176px; height: 176px; }
+.ready-pics img { padding: 4px; }
