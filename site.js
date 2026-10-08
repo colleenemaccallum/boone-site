@@ -118,6 +118,19 @@ buoy.addEventListener('click', () => {
   buoy.classList.remove('nudge');
 });
 
+// Tiny steps and Bigger steps swap in a different set of step cards, like the app.
+// Tapping the pressed one again goes back to the usual steps.
+const sizeButtons = document.querySelectorAll('#sizes .size');
+function showSteps(size) {
+  steps.querySelectorAll('.card').forEach((card) => { card.hidden = !card.dataset.sets.split(' ').includes(size); });
+  sizeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.size === size)));
+}
+sizeButtons.forEach((button) => button.addEventListener('click', () => {
+  showSteps(button.getAttribute('aria-pressed') === 'true' ? 'normal' : button.dataset.size);
+}));
+document.getElementById('sizes').hidden = false;
+showSteps('normal');
+
 // The map and the present give a little wiggle once they are on screen, so they get noticed.
 const parcel = document.querySelector('.parcel');
 const seen = new IntersectionObserver((entries) => {

@@ -19,7 +19,7 @@
 <link rel="icon" href="favicon.png">
 <link rel="preload" href="fonts/7b114e24f7.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css?v=1791385613">
-<link rel="stylesheet" href="site.css?v=1791423143">
+<link rel="stylesheet" href="site.css?v=1791423356">
 <script type="application/ld+json">
 [
  {
@@ -107,15 +107,17 @@
     </div>
     <svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 22 C 24 6, 48 6, 70 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 7"/><path d="M60 10 L71 18 L59 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <div class="steps" id="steps" aria-live="polite">
-      <div class="card small"><img src="img/own/tie-up-the-trash-bag.webp" alt="" width="576" height="576" loading="lazy"><span>Tie up the trash bag</span></div>
-      <div class="card small"><img src="img/own/carry-it-to-the-outside-bin.webp" alt="" width="576" height="576" loading="lazy"><span>Carry it to the outside bin</span></div>
-      <div class="card small"><img src="img/own/put-a-new-bag-in-the-can.webp" alt="" width="576" height="576" loading="lazy"><span>Put a new bag in the can</span></div>
+      <div class="card small" data-sets="tiny" hidden><img src="img/own/clear-food-scraps-into-the-trash.webp" alt="" width="576" height="576" loading="lazy"><span>Clear food scraps into the trash</span></div>
+      <div class="card small" data-sets="tiny normal"><img src="img/own/tie-up-the-trash-bag.webp" alt="" width="576" height="576" loading="lazy"><span>Tie up the trash bag</span></div>
+      <div class="card small" data-sets="bigger" hidden><img src="img/own/carry-it-to-the-outside-bin.webp" alt="" width="576" height="576" loading="lazy"><span>Tie the bag and carry it out</span></div>
+      <div class="card small" data-sets="tiny normal"><img src="img/own/carry-it-to-the-outside-bin.webp" alt="" width="576" height="576" loading="lazy"><span>Carry it to the outside bin</span></div>
+      <div class="card small" data-sets="tiny normal bigger"><img src="img/own/put-a-new-bag-in-the-can.webp" alt="" width="576" height="576" loading="lazy"><span>Put a new bag in the can</span></div>
     </div>
+    <div class="sizes" id="sizes" hidden role="group" aria-label="Step size"><button type="button" class="size" data-size="tiny" aria-pressed="false">Tiny steps</button><button type="button" class="size" data-size="bigger" aria-pressed="false">Bigger steps</button></div>
   </div>
   <div data-e="e28" data-c="e28" class="bd-more">
-    <p data-e="e29">That little map sits in the corner of every card. It's called <b>Chart Steps</b>. Each step becomes its own card with its own picture, so you only ever look at the next small thing.</p>
-    <p data-e="e30">Still too big? Tap <b>Tiny steps</b>. Too many? Tap <b>Bigger steps</b>. Change or remove any step you like. When the last one is done, the whole card counts.</p>
-    <p data-e="e31" class="fine-print">Everyday cards have steps ready, even offline. For anything else, an AI helper writes the steps (it asks you first), and you get a few free every day.</p>
+    <ul data-e="e29" class="chips"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 8h.01"/><path d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/><path d="M3 16l5-5c.928-.893 2.072-.893 3 0l5 5"/><path d="M14 14l1-1c.928-.893 2.072-.893 3 0l3 3"/></svg>A picture for every step</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L18.5 9.5a2.828 2.828 0 1 0-4-4L4 16v4"/><path d="M13.5 6.5l4 4"/></svg>Edit any step</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18h.01"/><path d="M9.172 15.172a4 4 0 0 1 5.656 0"/><path d="M6.343 12.343a7.963 7.963 0 0 1 3.864-2.14m4.163.155a7.965 7.965 0 0 1 3.287 2"/><path d="M3.515 9.515A12 12 0 0 1 7.059 7.06m3.101-.92a12 12 0 0 1 10.325 3.374"/><path d="M3 3l18 18"/></svg>Everyday cards work offline</li></ul>
+    <p data-e="e31" class="fine-print">For anything else, an AI helper writes the steps after asking you. A few free each day.</p>
   </div>
 </section>
 
@@ -123,9 +125,7 @@
   <div data-e="e33" data-c="e33" class="sticker-intro">
     <div data-e="e34" data-c="e34" class="section-words">
       <h2 data-e="e35">Stickers for showing up.</h2>
-      <p data-e="e36" class="sub">Some of them shimmer.</p>
-      <p data-e="e37">Each day you open Boone, a sticker is waiting. The first set is called Harbor Nights.</p>
-      <p data-e="e38">Every sticker comes in four finishes. The holo ones shimmer when you tilt your phone.</p>
+      <p data-e="e36" class="sub">A new one waits each day you open Boone.</p>
     </div>
     <div data-e="e39" data-c="e39" class="finish-box">
     <div data-e="e40" class="finishes" id="finishes">
@@ -154,8 +154,8 @@
     <div data-e="e44" data-c="e44" class="section-words">
       <svg data-e="e45" class="parcel" viewBox="0 0 40 30" aria-hidden="true"><ellipse cx="20" cy="28.2" rx="17" ry="1.6" fill="rgba(74,46,28,.25)"/><g stroke="#4A2E1C" stroke-width="1.5" stroke-linejoin="round"><rect x="3" y="9" width="34" height="18" rx="2.5" fill="#3F6496"/><rect x="2" y="6" width="36" height="6" rx="2" fill="#2C4A74"/><rect x="17.75" y="6" width="4.5" height="21" fill="#F2AE3A" stroke-width=".75"/><rect x="3" y="16.5" width="34" height="3.5" fill="#F2AE3A" stroke-width=".75"/><path d="M20 6c-3-5-9-6-9-2.5S16 7 20 6z" fill="#F2AE3A"/><path d="M20 6c3-5 9-6 9-2.5S24 7 20 6z" fill="#F2AE3A"/><ellipse cx="20" cy="6" rx="2.2" ry="1.8" fill="#F2AE3A"/></g></svg>
       <h3 data-e="e46">Presents on the dock.</h3>
-      <p data-e="e47">Finishing cards can bring presents too. They wait on Boone's dock, and you don't know what's inside until you open one.</p>
-      <p data-e="e49">Gone a day or a month? Boone is still on the dock, and everything you collected is still yours.</p>
+      <p data-e="e47">Finish cards and surprise presents show up on Boone's dock.</p>
+      <p data-e="e49" class="fine-print">Gone a while? Everything you collected is still yours.</p>
     </div>
   </div>
 </section>
@@ -181,11 +181,11 @@
     <img data-e="e58" class="crew-boone" src="img/boone-mug.webp" alt="" width="189" height="271" loading="lazy">
     <h2 data-e="e59">Boone needs a crew.</h2>
     <div data-e="e60" data-c="e60" id="android-ask">
-      <p data-e="e61">Android. About 10 minutes a day for 2 weeks. Free. Adults 18+ in the US.</p>
+      <ul data-e="e61" class="chips crew-facts"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Android</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>10 min a day</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>2 weeks</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>18+ in the US</li></ul>
       <a data-e="e62" class="btn" href="/test.html">Help test Boone</a>
       <hr data-e="e63">
     </div>
-    <p data-e="e64" class="form-label">Get a few short notes over the first few weeks, then at most one a month.</p>
+    <p data-e="e64" class="form-label">A few short notes, then at most one a month.</p>
     <form data-e="e65" class="signup" id="signup" method="post" action="https://app.kit.com/forms/10005040/subscriptions">
       <label for="email" class="sr">Email</label>
       <input id="email" name="email_address" type="email" placeholder="you@example.com" autocomplete="email" required>
@@ -215,7 +215,7 @@
   <p data-e="e86" class="fine marks">iPhone is a trademark of Apple Inc. Android is a trademark of Google LLC. The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.</p>
 </footer>
 
-<script data-e="e80" src="site.js?v=1791423143"></script>
+<script data-e="e80" src="site.js?v=1791423356"></script>
 <script data-goatcounter="https://boone.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
