@@ -13,7 +13,7 @@ body {
   margin: 0; color: var(--ink); font: 19px/1.6 var(--sans);
   background: var(--paper);
 }
-img { max-width: 100%; }
+img { max-width: 100%; height: auto; }
 a { color: var(--blue); }
 h1, h2 { font-family: var(--serif); color: var(--navy); font-weight: 750; letter-spacing: -0.02em; margin: 0; }
 h1 { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.06; margin: 14px 0 14px; }
