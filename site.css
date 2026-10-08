@@ -322,3 +322,22 @@ footer .marks { max-width: 640px; margin: 10px auto 0; font-size: 12px; line-hei
 .split .card.big img { width: 150px; height: auto; }
 .stack .card.big img { width: 176px; height: 176px; }
 .ready-pics img { padding: 4px; }
+/* The ready-made cards fan out like a hand of cards (Colleen, 2026-10-08). */
+.ready-pics { gap: 0; padding-top: 10px; }
+.ready-pics img { position: relative; margin: 0 -5px; transform-origin: 50% 160%; }
+.ready-pics img:nth-child(1) { transform: rotate(-16deg); }
+.ready-pics img:nth-child(2) { transform: rotate(-8deg); }
+.ready-pics img:nth-child(4) { transform: rotate(8deg); }
+.ready-pics img:nth-child(5) { transform: rotate(16deg); }
+/* "Tap me" sits above the card pointing down at the buoy, so it never covers the picture; the ring stays inside the card. */
+.split .callout { top: -46px; right: 14px; }
+.split .callout::after { right: 50%; top: auto; bottom: -7px; margin: 0 -7px 0 0; border: 7px solid transparent; border-bottom: 0; border-top-color: var(--navy); }
+.split .callout { animation-name: bob-down; }
+@keyframes bob-down { 50% { transform: translateY(-4px); } }
+.buoy-btn::after { animation-name: ripple-small; }
+@keyframes ripple-small { 0% { transform: scale(.9); opacity: .9; } 100% { transform: scale(1.12); opacity: 0; } }
+/* Chart Steps is a folded treasure map in the card's top left corner, like the app (Colleen, 2026-10-08). */
+.buoy-btn { right: auto; left: 8px; }
+.buoy-btn:hover .buoy { transform: rotate(-8deg); }
+.split .callout { right: auto; left: 10px; }
+.split .callout::after { right: auto; left: 30px; margin: 0; }

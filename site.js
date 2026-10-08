@@ -100,7 +100,7 @@ signup.addEventListener('submit', async (event) => {
   button.disabled = false;
 });
 
-// Chart Steps starts folded; the buoy opens the steps and folds them back.
+// Chart Steps starts folded; the map opens the steps and folds them back.
 document.documentElement.classList.add('js');
 const split = document.getElementById('split');
 const buoy = document.getElementById('buoy');
@@ -118,7 +118,7 @@ buoy.addEventListener('click', () => {
   buoy.classList.remove('nudge');
 });
 
-// The buoy and the present give a little wiggle once they are on screen, so they get noticed.
+// The map and the present give a little wiggle once they are on screen, so they get noticed.
 const parcel = document.querySelector('.parcel');
 const seen = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
