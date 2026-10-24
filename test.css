@@ -29,9 +29,11 @@ body { background: linear-gradient(var(--paper), var(--sky)); }
 .chips input:focus-visible + span { outline: 3px solid var(--navy); outline-offset: 3px; }
 
 .gentle { margin: 12px 0 0; padding: 12px 16px; border-radius: 14px; background: #fff4dc; color: var(--ink); font-weight: 400; font-size: 17px; }
-.needs > legend, .needs { color: #8a5a00; }
-.needs input[type="text"], .needs input[type="email"] { border-color: var(--yellow); box-shadow: 0 0 0 3px #fbe7a6; }
-.needs .chips span { box-shadow: 0 3px 0 var(--yellow); }
+/* Missed answers get a soft pink, never an alarm red. */
+.needs > legend, .needs { color: #9c2f5c; }
+.needs input[type="text"], .needs input[type="email"] { border-color: #d9658f; background: #fdeef3; box-shadow: 0 0 0 3px #f8d3e0; }
+.needs .chips span { background: #fbe1ea; box-shadow: 0 3px 0 #d9658f; }
+#missing { background: #fdeef3; }
 #send { width: 100%; margin-top: 8px; }
 .ask .thanks { text-align: center; }
 .test .private { max-width: 620px; margin: 28px auto 0; font-size: 16px; color: var(--muted); text-align: center; }
