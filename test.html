@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Help test Boone</title>
-<meta name="description" content="Try an early version of Boone on your Android phone for two weeks.">
+<meta name="description" content="Try an early version of Boone on your iPhone for two weeks.">
 <meta property="og:title" content="Help test Boone">
-<meta property="og:description" content="Try an early version of Boone on your Android phone for two weeks.">
+<meta property="og:description" content="Try an early version of Boone on your iPhone for two weeks.">
 <meta property="og:image" content="https://getboone.app/img/share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -14,11 +14,11 @@
 <link rel="canonical" href="https://getboone.app/test.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Help test Boone">
-<meta name="twitter:description" content="Try an early version of Boone on your Android phone for two weeks.">
+<meta name="twitter:description" content="Try an early version of Boone on your iPhone for two weeks.">
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="fonts.css?v=1791385613">
-<link rel="stylesheet" href="site.css?v=1791385613">
-<link rel="stylesheet" href="test.css?v=1791385613">
+<link rel="stylesheet" href="site.css?v=1792803271">
+<link rel="stylesheet" href="test.css?v=1792803782">
 </head>
 <body>
 
@@ -30,8 +30,8 @@
 <main class="test">
   <div class="paper ask">
     <span class="tape"></span>
-    <h1>Help test Boone.</h1>
-    <p class="lead">Use an early version on your Android phone for two weeks, then fill in two 5-minute forms. We'll email you when the test is ready.</p>
+    <h1>Help Test Boone on iPhone.</h1>
+    <p class="lead">Try an early version of Boone on your iPhone for two weeks, then let us know how it went by filling out a couple of short forms. It&rsquo;s free!</p>
 
     <form id="tester" method="post" action="https://submit.jotform.com/submit/262770562820054" target="jotform-frame" novalidate>
       <input type="hidden" name="formID" value="262770562820054">
@@ -43,7 +43,7 @@
       <input type="hidden" name="eventObserver" value="1">
       <input type="hidden" name="website" value="">
 
-      <fieldset class="q">
+      <fieldset class="q" data-short="age and country">
         <legend>Are you 18 or older and living in the US?</legend>
         <div class="chips">
           <label><input type="radio" name="q3_q3_radio1" value="Yes" required><span>Yes</span></label>
@@ -53,41 +53,47 @@
       </fieldset>
 
       <div id="rest">
-        <label class="q">First name
+        <label class="q" data-short="first name">First name
           <input type="text" name="q4_q4_textbox2" autocomplete="given-name" required>
         </label>
-        <label class="q">Email
-          <input type="email" name="q5_q5_email3" autocomplete="email" required>
+        <label class="q" data-short="email">Email
+          <input type="email" name="q5_q5_email3" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" required>
         </label>
 
-        <fieldset class="q">
-          <legend>What phone do you use?</legend>
+        <fieldset class="q" data-short="phone">
+          <legend>Which phone do you use?</legend>
           <div class="chips">
-            <label><input type="radio" name="q6_q6_radio4" value="Android" required><span>Android</span></label>
-            <label><input type="radio" name="q6_q6_radio4" value="iPhone"><span>iPhone</span></label>
+            <label><input type="radio" name="q6_q6_radio4" value="iPhone" required><span>iPhone</span></label>
+            <label><input type="radio" name="q6_q6_radio4" value="Android"><span>Android</span></label>
             <label><input type="radio" name="q6_q6_radio4" value="Both"><span>Both</span></label>
           </div>
-          <p class="gentle" id="iphone-note" hidden>This first test is Android only. Leave your details and we'll tell you when Boone comes to iPhone.</p>
+          <p class="gentle" id="android-note" hidden>iPhone comes first. Leave your details and we'll tell you when the Android test opens.</p>
         </fieldset>
 
-        <label class="q" id="play-email" hidden>Google account email for the Play Store
-          <small>Google needs this to let you install the test version. It can be the same as above.</small>
-          <input type="email" name="q8_q8_email6" autocomplete="email">
-        </label>
+        <fieldset class="q">
+          <legend>How do you keep track of things you need to do now? <small>Optional</small></legend>
+          <div class="chips">
+            <label><input type="radio" name="q21_howDo" value="Notes App"><span>Notes App</span></label>
+            <label><input type="radio" name="q21_howDo" value="Paper"><span>Paper</span></label>
+            <label><input type="radio" name="q21_howDo" value="Another App"><span>Another App</span></label>
+            <label><input type="radio" name="q21_howDo" value="In My Head"><span>In My Head</span></label>
+            <label><input type="radio" name="q21_howDo" value="Nothing Works Yet"><span>Nothing Works Yet</span></label>
+          </div>
+        </fieldset>
 
-        <div class="chips">
-          <label><input type="checkbox" name="q17_q17_checkbox15[]" value="Yes"><span>Also email me when Boone launches</span></label>
+        <div class="optin">
+          <label><input type="checkbox" name="q17_q17_checkbox15[]" value="Yes"><span>Also Email Me When Boone Launches</span></label>
         </div>
 
-        <p class="gentle" id="missing" hidden>A few answers are still missing. They're marked in yellow.</p>
-        <p class="gentle" id="failed" hidden>That didn't go through. Please try again, or email <a href="mailto:support@getboone.app">support@getboone.app</a>.</p>
+        <p class="gentle" id="missing" role="alert" hidden></p>
+        <p class="gentle" id="failed" role="alert" hidden>That didn't go through. Please try again, or email <a href="mailto:support@getboone.app">support@getboone.app</a>.</p>
         <button class="btn" type="submit" id="send" data-goatcounter-click="tap-tester-send">Send</button>
       </div>
     </form>
 
     <div class="thanks" id="thanks" hidden tabindex="-1">
-      <h2>Got it. Thank you.</h2>
-      <p>We'll email you when the test is ready.</p>
+      <h2>Got It. Thank You.</h2>
+      <p>If you're picked, we'll email you a link from support@getboone.app. Open it on your iPhone, and Apple's free TestFlight app will set Boone up.</p>
       <p>Meanwhile, Boone is on Instagram: <a href="https://www.instagram.com/boone.app/">@boone.app</a></p>
     </div>
     <iframe name="jotform-frame" id="jotform-frame" title="Sending" hidden></iframe>
@@ -107,7 +113,7 @@
   <p class="fine">&copy; 2026 Boone</p>
 </footer>
 
-<script src="test.js?v=1791384734"></script>
+<script src="test.js?v=1792803271"></script>
 <script data-goatcounter="https://boone.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
