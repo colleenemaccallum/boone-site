@@ -48,7 +48,7 @@ draw(false);
 // iPhone visitors can test now; everyone else gets launch news first.
 const iphone = /iPhone/i.test(navigator.userAgent);
 if (iphone) {
-  document.getElementById('top-link').textContent = 'Help test';
+  document.getElementById('top-link').textContent = 'Help Test';
 } else {
   document.getElementById('test-ask').hidden = true;
 }
