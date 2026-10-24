@@ -8,7 +8,7 @@ function update() {
   show('not-yet', adult === 'No');
   show('rest', adult !== 'No');
   const phone = pick('q6_q6_radio4');
-  show('iphone-note', phone === 'iPhone');
+  show('android-note', phone === 'Android');
   show('play-email', phone === 'Android' || phone === 'Both');
 }
 form.addEventListener('change', update);

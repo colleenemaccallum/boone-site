@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Help test Boone</title>
-<meta name="description" content="Try an early version of Boone on your Android phone for two weeks.">
+<meta name="description" content="Try an early version of Boone on your iPhone for two weeks.">
 <meta property="og:title" content="Help test Boone">
-<meta property="og:description" content="Try an early version of Boone on your Android phone for two weeks.">
+<meta property="og:description" content="Try an early version of Boone on your iPhone for two weeks.">
 <meta property="og:image" content="https://getboone.app/img/share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -14,7 +14,7 @@
 <link rel="canonical" href="https://getboone.app/test.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Help test Boone">
-<meta name="twitter:description" content="Try an early version of Boone on your Android phone for two weeks.">
+<meta name="twitter:description" content="Try an early version of Boone on your iPhone for two weeks.">
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="fonts.css?v=1791385613">
 <link rel="stylesheet" href="site.css?v=1791385613">
@@ -30,8 +30,8 @@
 <main class="test">
   <div class="paper ask">
     <span class="tape"></span>
-    <h1>Help test Boone.</h1>
-    <p class="lead">Use an early version on your Android phone for two weeks, then fill in two 5-minute forms. We'll email you when the test is ready.</p>
+    <h1>Help test Boone on iPhone.</h1>
+    <p class="lead">Use an early version on your iPhone for two weeks, then fill in two 5-minute forms. It's free. We'll email you an invite when the test opens.</p>
 
     <form id="tester" method="post" action="https://submit.jotform.com/submit/262770562820054" target="jotform-frame" novalidate>
       <input type="hidden" name="formID" value="262770562820054">
@@ -63,17 +63,28 @@
         <fieldset class="q">
           <legend>What phone do you use?</legend>
           <div class="chips">
-            <label><input type="radio" name="q6_q6_radio4" value="Android" required><span>Android</span></label>
-            <label><input type="radio" name="q6_q6_radio4" value="iPhone"><span>iPhone</span></label>
+            <label><input type="radio" name="q6_q6_radio4" value="iPhone" required><span>iPhone</span></label>
+            <label><input type="radio" name="q6_q6_radio4" value="Android"><span>Android</span></label>
             <label><input type="radio" name="q6_q6_radio4" value="Both"><span>Both</span></label>
           </div>
-          <p class="gentle" id="iphone-note" hidden>This first test is Android only. Leave your details and we'll tell you when Boone comes to iPhone.</p>
+          <p class="gentle" id="android-note" hidden>iPhone comes first. Leave your details and we'll tell you when the Android test opens.</p>
         </fieldset>
 
         <label class="q" id="play-email" hidden>Google account email for the Play Store
           <small>Google needs this to let you install the test version. It can be the same as above.</small>
           <input type="email" name="q8_q8_email6" autocomplete="email">
         </label>
+
+        <fieldset class="q">
+          <legend>How do you keep track of things you need to do now?</legend>
+          <div class="chips">
+            <label><input type="radio" name="q18_q18_radio16" value="Notes app"><span>Notes app</span></label>
+            <label><input type="radio" name="q18_q18_radio16" value="Paper"><span>Paper</span></label>
+            <label><input type="radio" name="q18_q18_radio16" value="Another app"><span>Another app</span></label>
+            <label><input type="radio" name="q18_q18_radio16" value="In my head"><span>In my head</span></label>
+            <label><input type="radio" name="q18_q18_radio16" value="Nothing works yet"><span>Nothing works yet</span></label>
+          </div>
+        </fieldset>
 
         <div class="chips">
           <label><input type="checkbox" name="q17_q17_checkbox15[]" value="Yes"><span>Also email me when Boone launches</span></label>
@@ -87,7 +98,7 @@
 
     <div class="thanks" id="thanks" hidden tabindex="-1">
       <h2>Got it. Thank you.</h2>
-      <p>We'll email you when the test is ready.</p>
+      <p>We'll email you an invite when the test opens.</p>
       <p>Meanwhile, Boone is on Instagram: <a href="https://www.instagram.com/boone.app/">@boone.app</a></p>
     </div>
     <iframe name="jotform-frame" id="jotform-frame" title="Sending" hidden></iframe>

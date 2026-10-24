@@ -45,12 +45,12 @@ done.onclick = () => { done.classList.remove('ask'); document.getElementById('do
 later.onclick = () => move('later');
 draw(false);
 
-// Android visitors can test now; everyone else gets launch news first.
-const android = /Android/i.test(navigator.userAgent);
-if (android) {
+// iPhone visitors can test now; everyone else gets launch news first.
+const iphone = /iPhone/i.test(navigator.userAgent);
+if (iphone) {
   document.getElementById('top-link').textContent = 'Help test';
 } else {
-  document.getElementById('android-ask').hidden = true;
+  document.getElementById('test-ask').hidden = true;
 }
 
 // From 8 pm to 6 am, like the app, Boone is on the night shift. Three taps on the dock swap it.
