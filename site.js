@@ -5,6 +5,11 @@ if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 const reloaded = performance.getEntriesByType('navigation')[0]?.type === 'reload';
 if (reloaded && location.hash) history.replaceState(null, '', location.pathname + location.search);
 if (reloaded || !location.hash) window.scrollTo(0, 0);
+// A ?from= word on the homepage carries on to the test sign-up, so the source isn't lost on the way.
+const from = new URLSearchParams(location.search).get('from');
+if (from) {
+  document.querySelectorAll('a[href="/test.html"]').forEach((link) => { link.search = `?from=${encodeURIComponent(from)}`; });
+}
 const CARDS = [
   ['Wake Up', 'wake-up'], ['Coffee', 'coffee'], ['Brush Teeth', 'brush-teeth'],
   ['Charge Phone', 'charge-phone'], ['Send a Text', 'send-a-text'], ['Start Laundry', 'start-laundry'],
