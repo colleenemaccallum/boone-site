@@ -3,30 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boone: a visual to-do list app, one picture card at a time</title>
-<meta name="description" content="A free visual to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.">
+<title>Boone: a cozy to-do list app, one picture card at a time</title>
+<meta name="description" content="A free, cozy to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.">
 <link rel="canonical" href="https://getboone.app/">
-<meta property="og:title" content="Boone: the to-do app that isn't a chore">
-<meta property="og:description" content="A free visual to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.">
+<meta property="og:title" content="Boone: a cozy harbor for your to-dos">
+<meta property="og:description" content="A free, cozy to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.">
 <meta property="og:image" content="https://getboone.app/img/share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://getboone.app/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Boone: the to-do app that isn't a chore">
-<meta name="twitter:description" content="A free visual to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.">
+<meta name="twitter:title" content="Boone: a cozy harbor for your to-dos">
+<meta name="twitter:description" content="A free, cozy to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.">
 <meta name="twitter:image" content="https://getboone.app/img/share.png">
 <link rel="icon" href="favicon.png">
 <link rel="preload" href="fonts/7b114e24f7.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css?v=1791385613">
-<link rel="stylesheet" href="site.css?v=1792987432">
+<link rel="stylesheet" href="site.css?v=1792988539">
 <script type="application/ld+json">
 [
  {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Boone",
-  "description": "A free visual to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.",
+  "description": "A free, cozy to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.",
   "url": "https://getboone.app/",
   "operatingSystem": "iOS",
   "applicationCategory": "ProductivityApplication",
@@ -66,119 +66,61 @@
 
 <section data-e="e4" data-c="e4" class="hero">
   <div data-e="e5" data-c="e5" class="hero-words">
-    <h1 data-e="e6">The To-Do App That Isn't a Chore.</h1>
-    <p data-e="e7" class="sub">One picture card at a time.</p>
+    <h1 data-e="e6">A Cozy Harbor for Your To-Dos.</h1>
+    <p data-e="e7" class="sub">One picture card at a time. Miss a day? It's all good here.</p>
     <div data-e="e8" data-c="e8" class="actions">
       <a data-e="e9" class="store" href="/test.html" data-goatcounter-click="tap-help-test"><svg aria-hidden="true" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="14" height="26" rx="3.5"/><path d="M14 7h4"/></svg><span>Help Test on iPhone</span></a>
-      <a data-e="e10" class="store soon" href="#crew" aria-label="Android, coming soon. Get launch news."><svg aria-hidden="true" viewBox="0 0 32 32" width="26" height="26"><path fill="currentColor" d="M4 24a12 12 0 0 1 24 0z"/><path stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M9 10.5 6.5 6.5M23 10.5l2.5-4"/><circle cx="11" cy="18.5" r="1.7" fill="#fff"/><circle cx="21" cy="18.5" r="1.7" fill="#fff"/></svg><span>Android</span><span class="soon-tape" aria-hidden="true">Coming Soon!</span></a>
+      <a data-e="e10" class="store soon" href="#crew" aria-label="Android, coming soon. Get launch news."><svg aria-hidden="true" viewBox="0 0 32 32" width="26" height="26"><path fill="currentColor" d="M4 24a12 12 0 0 1 24 0z"/><path stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M9 10.5 6.5 6.5M23 10.5l2.5-4"/><circle cx="11" cy="18.5" r="1.7" fill="#fff"/><circle cx="21" cy="18.5" r="1.7" fill="#fff"/></svg><span>Android</span><span class="soon-tape" aria-hidden="true">Coming Soon</span></a>
     </div>
   </div>
-
-  <div data-e="e11" data-c="e11" class="demo">
-    <div data-e="e12" class="stack" id="stack"></div>
-    <div data-e="e13" class="demo-buttons">
-      <button class="btn soft" id="later" type="button">Later</button>
-      <button class="btn" id="done" type="button">Done</button>
-      <span class="callout up" id="done-callout" aria-hidden="true">Tap me</span>
-    </div>
-    <p data-e="e14" class="hint" id="left" aria-live="polite"></p>
-  </div>
+  <div data-e="e11" class="hero-phone"><figure class="phone"><img src="img/app/today.webp" alt="Boone app: the Wash Dishes card on the boathouse, with Later, Time, Steps and Done buttons, and Boone reading on his dock" width="540" height="1171"></figure></div>
 </section>
 
-<section data-e="e15" data-c="e15" class="tried">
-  <p data-e="e90" class="what-it-is">A free visual to-do list and planner for your phone.</p>
-  <div data-e="e16" class="ready">
-    <div class="ready-pics" aria-hidden="true"><img src="img/own/water-plants.webp" alt="" width="576" height="576" loading="lazy"><img src="img/own/wash-dishes.webp" alt="" width="576" height="576" loading="lazy"><img src="img/own/grocery-bag.webp" alt="" width="576" height="576" loading="lazy"><img src="img/own/pay-bills.webp" alt="" width="576" height="576" loading="lazy"><img src="img/own/cook-dinner.webp" alt="" width="576" height="576" loading="lazy"></div>
-    <p data-e="e17"><b>Skip the typing.</b> Over 1,200 ready-made cards, each with a picture.<br>Tap one and it's on your day.</p>
-    <p data-e="e83" class="own">Can't find it? Make your own card.</p>
+<section class="crew-intro" id="meet">
+  <h2>Meet the Crew.</h2>
+  <div class="boone-lead">
+    <img src="img/crew/boone.webp" alt="Boone the walrus, waving" width="420" height="504" loading="lazy">
+    <div>
+      <h3>Boone</h3>
+      <p>Runs the dock and hands you one card at a time. He looks after himself, so today can be about you.</p>
+    </div>
   </div>
+  <ul class="mates">
+    <li><img src="img/crew/keith.webp" alt="" width="129" height="180" loading="lazy"><h3>Keith</h3><p>A gull. Helps you get started. Says one word: &ldquo;Mine.&rdquo;</p></li>
+    <li><img src="img/crew/mabel.webp" alt="" width="240" height="240" loading="lazy"><h3>Mabel</h3><p>A sea turtle. Keeps time by moments, like &ldquo;After breakfast.&rdquo;</p></li>
+    <li><img src="img/crew/clem.webp" alt="" width="240" height="240" loading="lazy"><h3>Clem</h3><p>A hermit crab. Remembers things and runs the shell stall.</p></li>
+    <li><img src="img/crew/teddy.webp" alt="" width="149" height="180" loading="lazy"><h3>Teddy</h3><p>A shy little dog. Keeps you company on hard days.</p></li>
+  </ul>
 </section>
-
-<section data-e="e23" data-c="e23" class="breakdown" id="breakdown">
-  <div data-e="e24" data-c="e24" class="section-words">
-    <h2 data-e="e25">For the Cards You Keep Putting Off.</h2>
-    <p data-e="e91" class="sub">Chart Steps splits a big task into small steps.</p>
+<section class="how" id="how">
+  <h2>Your Cards and Binder.</h2>
+  <div class="shots">
+    <div class="shot"><div class="art art-steps" role="img" aria-label="The Shower card split into three small steps"><div class="tcard "><img src="img/cards/shower.webp" alt="" width="288" height="288" loading="lazy"><b>Shower</b></div><ul class="steplist"><li><img src="img/cards/step-put-a-towel-and-clean-clothes-nearby.webp" alt="" width="288" height="288" loading="lazy">Put a Towel Nearby</li><li><img src="img/cards/step-wash-your-hair.webp" alt="" width="288" height="288" loading="lazy">Wash Your Hair</li><li><img src="img/cards/step-wash-your-body.webp" alt="" width="288" height="288" loading="lazy">Wash Your Body</li></ul></div><h3>Big Card? Chart Steps.</h3><p>It splits a card into small steps, each with a picture.</p></div>
+    <div class="shot"><div class="art art-hard" role="img" aria-label="The Shower card with a smaller version, Wipes and Fresh Clothes, that counts as a shower"><div class="tcard behind"><img src="img/cards/shower.webp" alt="" width="288" height="288" loading="lazy"><b>Shower</b></div><div class="tcard front"><img src="img/cards/put-on-clean-clothes.webp" alt="" width="288" height="288" loading="lazy"><b>Wipes and Fresh Clothes</b><span class="counts">Counts as Shower</span></div></div><h3>Hard Day? Go Smaller.</h3><p>Many cards have a smaller version that still counts.</p></div>
+    <div class="shot"><div class="art art-edges" role="img" aria-label="Three cards with Silver, Gold and Holo edges"><div class="tcard silver"><img src="img/cards/coffee.webp" alt="" width="288" height="288" loading="lazy"><b>Coffee</b><span class="edge-tag">Silver</span></div><div class="tcard gold"><img src="img/cards/water-plants.webp" alt="" width="288" height="288" loading="lazy"><b>Water Plants</b><span class="edge-tag">Gold</span></div><div class="tcard holo"><img src="img/cards/wash-dishes.webp" alt="" width="288" height="288" loading="lazy"><b>Wash Dishes</b><span class="edge-tag">Holo</span></div></div><h3>Your Binder Fills Up.</h3><p>Cards you finish earn shiny edges that never fade.</p></div>
   </div>
-  <div data-e="e27" class="split" id="split">
-    <div class="card big">
-      <span class="callout" id="buoy-callout" aria-hidden="true">Tap me</span>
-      <button class="buoy-btn" id="buoy" type="button" aria-label="Chart Steps" aria-expanded="true" aria-controls="steps"><svg class="buoy map" aria-hidden="true" viewBox="-4 -4 62 62" xmlns="http://www.w3.org/2000/svg"><path d="M6 12 L20 7 L34 12 L48 7 V41 L34 46 L20 41 L6 46Z" transform="translate(0 2)" fill="#24405C" opacity=".22" stroke="#24405C" stroke-width="7.4" stroke-linejoin="round"/><path d="M6 12 L20 7 L34 12 L48 7 V41 L34 46 L20 41 L6 46Z" fill="#fff" stroke="#fff" stroke-width="7.4" stroke-linejoin="round"/><path d="M6 12 L20 7 L34 12 L48 7 V41 L34 46 L20 41 L6 46Z" fill="#FFF3D6"/><path d="M20 7 V41 L6 46 V12Z" fill="#F2AE3A"/><path d="M34 12 V46 L48 41 V7Z" fill="#9DB8D9"/><path d="M6 12 L20 7 L34 12 L48 7 V41 L34 46 L20 41 L6 46Z M20 7V41 M34 12V46" fill="none" stroke="#4A2E1C" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M11 38 Q16 26 24 30 T38 20" fill="none" stroke="#4A2E1C" stroke-width="2" stroke-dasharray="0.1 4.2" stroke-linecap="round"/><path d="M36.5 13.5L45.5 22.5M45.5 13.5L36.5 22.5" stroke="#C8553D" stroke-width="3.2" stroke-linecap="round"/></svg></button>
-      <img src="img/own/take-out-trash.webp" alt="" width="576" height="576" loading="lazy"><span>Take Out Trash</span>
-    </div>
-    <svg class="arrow" viewBox="0 0 80 40" aria-hidden="true"><path d="M4 22 C 24 6, 48 6, 70 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 7"/><path d="M60 10 L71 18 L59 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <div class="steps" id="steps" aria-live="polite">
-      <div class="card small" data-sets="tiny" hidden><img src="img/own/clear-food-scraps-into-the-trash.webp" alt="" width="576" height="576" loading="lazy"><span>Clear food scraps into the trash</span></div>
-      <div class="card small" data-sets="tiny normal"><img src="img/own/tie-up-the-trash-bag.webp" alt="" width="576" height="576" loading="lazy"><span>Tie up the trash bag</span></div>
-      <div class="card small" data-sets="bigger" hidden><img src="img/own/carry-it-to-the-outside-bin.webp" alt="" width="576" height="576" loading="lazy"><span>Tie the bag and carry it out</span></div>
-      <div class="card small" data-sets="tiny normal"><img src="img/own/carry-it-to-the-outside-bin.webp" alt="" width="576" height="576" loading="lazy"><span>Carry it to the outside bin</span></div>
-      <div class="card small" data-sets="tiny normal bigger"><img src="img/own/put-a-new-bag-in-the-can.webp" alt="" width="576" height="576" loading="lazy"><span>Put a new bag in the can</span></div>
-    </div>
-    <div class="sizes" id="sizes" hidden role="group" aria-label="Step size"><button type="button" class="size" data-size="tiny" aria-pressed="false">Tiny Steps</button><button type="button" class="size" data-size="bigger" aria-pressed="false">Bigger Steps</button></div>
-  </div>
-  <div data-e="e28" data-c="e28" class="bd-more">
-    <ul data-e="e29" class="chips"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 8h.01"/><path d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/><path d="M3 16l5-5c.928-.893 2.072-.893 3 0l5 5"/><path d="M14 14l1-1c.928-.893 2.072-.893 3 0l3 3"/></svg>A picture for every step</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L18.5 9.5a2.828 2.828 0 1 0-4-4L4 16v4"/><path d="M13.5 6.5l4 4"/></svg>Edit any step</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18h.01"/><path d="M9.172 15.172a4 4 0 0 1 5.656 0"/><path d="M6.343 12.343a7.963 7.963 0 0 1 3.864-2.14m4.163.155a7.965 7.965 0 0 1 3.287 2"/><path d="M3.515 9.515A12 12 0 0 1 7.059 7.06m3.101-.92a12 12 0 0 1 10.325 3.374"/><path d="M3 3l18 18"/></svg>Everyday cards work offline</li></ul>
-    <p data-e="e31" class="fine-print">For anything else, an AI helper writes the steps after asking you. A few free each day.</p>
-  </div>
+  <p class="swipe-hint" aria-hidden="true">Swipe for more</p>
+  <p class="how-note">Over 1,200 ready-made cards. Or make your own.</p>
 </section>
-
-<section data-e="e32" data-c="e32" class="stickers">
-  <div data-e="e33" data-c="e33" class="sticker-intro">
-    <div data-e="e34" data-c="e34" class="section-words">
-      <h2 data-e="e35">Stickers for Showing Up.</h2>
-      <p data-e="e36" class="sub">A new one waits each day you open Boone.</p>
-    </div>
-    <div data-e="e39" data-c="e39" class="finish-box">
-    <div data-e="e40" class="finishes" id="finishes">
-      <figure class="sticker plain">
-        <div class="peel"><span class="line"></span><span class="rim"></span><span class="edge"></span><img src="img/stickers/whale.png" alt="" width="512" height="512" loading="lazy"><span class="sheen"></span></div>
-        <figcaption>Plain</figcaption>
-      </figure>
-      <figure class="sticker silver">
-        <div class="peel"><span class="line"></span><span class="rim"></span><span class="edge"></span><img src="img/stickers/whale.png" alt="" width="512" height="512" loading="lazy"><span class="sheen"></span></div>
-        <figcaption>Silver</figcaption>
-      </figure>
-      <figure class="sticker gold">
-        <div class="peel"><span class="line"></span><span class="rim"></span><span class="edge"></span><img src="img/stickers/whale.png" alt="" width="512" height="512" loading="lazy"><span class="sheen"></span><svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 C11 7 13 9 20 10 C13 11 11 13 10 20 C9 13 7 11 0 10 C7 9 9 7 10 0Z"/></svg></div>
-        <figcaption>Gold</figcaption>
-      </figure>
-      <figure class="sticker holo">
-        <div class="peel"><span class="line"></span><span class="rim"></span><span class="edge"></span><img src="img/stickers/whale.png" alt="" width="512" height="512" loading="lazy"><span class="sheen"></span><svg class="spark" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 C11 7 13 9 20 10 C13 11 11 13 10 20 C9 13 7 11 0 10 C7 9 9 7 10 0Z"/></svg></div>
-        <figcaption>Holo</figcaption>
-      </figure>
-    </div>
-    <p data-e="e41" class="hint finish-hint" id="finish-hint">Move your mouse across the stickers.</p>
-    </div>
-  </div>
-  <div data-e="e42" data-c="e42" class="sticker-book">
-    <div data-e="e43" class="album"><img src="img/sticker-page-crop2.webp" width="668" height="758" loading="lazy" alt="A sticker book page called Harbor Nights with nine of twelve stickers collected"></div>
-    <div data-e="e44" data-c="e44" class="section-words">
-      <svg data-e="e45" class="parcel" viewBox="0 0 40 30" aria-hidden="true"><ellipse cx="20" cy="28.2" rx="17" ry="1.6" fill="rgba(74,46,28,.25)"/><g stroke="#4A2E1C" stroke-width="1.5" stroke-linejoin="round"><rect x="3" y="9" width="34" height="18" rx="2.5" fill="#3F6496"/><rect x="2" y="6" width="36" height="6" rx="2" fill="#2C4A74"/><rect x="17.75" y="6" width="4.5" height="21" fill="#F2AE3A" stroke-width=".75"/><rect x="3" y="16.5" width="34" height="3.5" fill="#F2AE3A" stroke-width=".75"/><path d="M20 6c-3-5-9-6-9-2.5S16 7 20 6z" fill="#F2AE3A"/><path d="M20 6c3-5 9-6 9-2.5S24 7 20 6z" fill="#F2AE3A"/><ellipse cx="20" cy="6" rx="2.2" ry="1.8" fill="#F2AE3A"/></g></svg>
-      <h3 data-e="e46">Presents on the Dock.</h3>
-      <p data-e="e47">Finish cards and surprise presents show up on Boone's dock.</p>
-      <p data-e="e49" class="fine-print">Gone a while? Everything you collected is still yours.</p>
-    </div>
-  </div>
+<section class="alive" id="harbor">
+  <h2>A Harbor That&rsquo;s Alive.</h2>
+  <p class="alive-sub">Boone keeps your hours, from morning coffee to lantern light. Add your ZIP code and the harbor gets your weather, sunrise, sunset and moon.</p>
+  <ul class="boone-day">
+    <li><img src="img/day/coffee-day.webp" alt="" width="300" height="285" loading="lazy"><span>Coffee</span></li>
+    <li><img src="img/day/fishing-day.webp" alt="" width="300" height="285" loading="lazy"><span>Fishing</span></li>
+    <li><img src="img/day/reading-day.webp" alt="" width="300" height="285" loading="lazy"><span>Reading</span></li>
+    <li class="night"><img src="img/day/lantern-night.webp" alt="" width="300" height="285" loading="lazy"><span>Lantern</span></li>
+    <li class="night"><img src="img/day/sleeping-night.webp" alt="" width="300" height="285" loading="lazy"><span>Sleeping</span></li>
+  </ul>
 </section>
-
-<section data-e="e18" data-c="e18" class="dock" id="dock">
-  <figure data-e="e19" class="scene">
-    <img id="scene" loading="lazy" src="img/dock-day.jpg" alt="Boone the walrus on his dock by the water" width="900" height="1125">
-    <figcaption class="note" id="note"><b>Morning shift.</b><i>Boone has his coffee before he looks at anything, including the gull.</i></figcaption>
-  </figure>
-  <div data-e="e20" data-c="e20" class="dock-words">
-    <h2 data-e="e21">Meet Boone.</h2>
-    <p data-e="e22">Boone runs his own dock and needs nothing from you, so you can focus on yourself.</p>
-    <p data-e="e82" class="aside">Boone isn't a pet. He feeds himself and keeps his own hours.</p>
-  </div>
+<section data-e="e54" data-c="e54" class="trust">
+  <p data-e="e117" class="promise">Boone will never charge you for having a hard week.</p>
+  <p data-e="e92" class="for-anyone">No account. Your cards stay on your phone. No ads.</p>
 </section>
-
-<p data-e="e54" class="promise">Boone will never charge you for having a hard week.</p>
-<p data-e="e92" class="for-anyone">Made for anyone who finds lists hard to start.</p>
-
 <section data-e="e55" data-c="e55" class="crew" id="crew">
   <div data-e="e56" data-c="e56" class="paper">
     <span data-e="e57" class="tape"></span>
-    <img data-e="e58" class="crew-boone" src="img/boone-mug.webp" alt="" width="192" height="271" loading="lazy">
+    <img data-e="e58" class="crew-boone" src="img/boone-hello.webp" alt="" width="360" height="360" loading="lazy">
     <h2 data-e="e59">Boone Needs a Crew.</h2>
     <div data-e="e60" data-c="e60" id="test-ask">
       <ul data-e="e61" class="chips crew-facts"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>iPhone</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>10 min a day</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>2 weeks</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>18+ in the US</li></ul>
@@ -216,7 +158,7 @@
   <p data-e="e86" class="fine marks">iPhone is a trademark of Apple Inc. Android is a trademark of Google LLC. The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.</p>
 </footer>
 
-<script data-e="e80" src="site.js?v=1792987432"></script>
+<script data-e="e80" src="site.js?v=1792988539"></script>
 <script data-goatcounter="https://boone.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
