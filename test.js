@@ -13,6 +13,11 @@ function update() {
 form.addEventListener('change', update);
 update();
 
+// Links in posts and emails end in ?from=reddit, ?from=kit and so on. That word rides along quietly
+// so Colleen can see which places bring testers; anything else, or no word, counts as "direct".
+const from = new URLSearchParams(location.search).get('from')?.toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 30);
+if (from) document.getElementById('source').value = from;
+
 function missing() {
   const gaps = [];
   ['q3_q3_radio1', 'q6_q6_radio4'].forEach((name) => {
