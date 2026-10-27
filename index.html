@@ -19,7 +19,8 @@
 <link rel="icon" href="favicon.png">
 <link rel="preload" href="fonts/7b114e24f7.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css?v=1791385613">
-<link rel="stylesheet" href="site.css?v=1792988539">
+<link rel="stylesheet" href="site.css?v=1793077776">
+<link rel="stylesheet" href="shine.css?v=1793077776">
 <script type="application/ld+json">
 [
  {
@@ -73,29 +74,75 @@
       <a data-e="e10" class="store soon" href="#crew" aria-label="Android, coming soon. Get launch news."><svg aria-hidden="true" viewBox="0 0 32 32" width="26" height="26"><path fill="currentColor" d="M4 24a12 12 0 0 1 24 0z"/><path stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M9 10.5 6.5 6.5M23 10.5l2.5-4"/><circle cx="11" cy="18.5" r="1.7" fill="#fff"/><circle cx="21" cy="18.5" r="1.7" fill="#fff"/></svg><span>Android</span><span class="soon-tape" aria-hidden="true">Coming Soon</span></a>
     </div>
   </div>
-  <div data-e="e11" class="hero-phone"><figure class="phone"><img src="img/app/today.webp" alt="Boone app: the Wash Dishes card on the boathouse, with Later, Time, Steps and Done buttons, and Boone reading on his dock" width="540" height="1171"></figure></div>
-</section>
-
-<section class="crew-intro" id="meet">
-  <h2>Meet the Crew.</h2>
-  <div class="boone-lead">
-    <img src="img/crew/boone.webp" alt="Boone the walrus, waving" width="420" height="504" loading="lazy">
-    <div>
-      <h3>Boone</h3>
-      <p>Runs the dock and hands you one card at a time. He looks after himself, so today can be about you.</p>
+  <div class="harbor-wrap">
+    <div class="harbor" id="harbor-window" aria-label="Boone's dock. Try the cards." role="region">
+      <img class="scene" id="scene" src="img/harbor/h14.webp" alt="" width="840" height="1440" fetchpriority="high">
+      <div class="sky" id="sky" aria-hidden="true"></div>
+      <div class="deck" id="deck" aria-live="polite"></div>
+      <div class="ports">
+        <button class="port" id="port-later" style="--x:8.81%" aria-label="Later"><img src="img/harbor/btn-later-day.webp" alt="" width="172" height="180"></button>
+        <button class="port" id="port-time" style="--x:29.52%" aria-label="Time"><img src="img/harbor/btn-time-day.webp" alt="" width="172" height="180"></button>
+        <button class="port" id="port-steps" style="--x:50%" aria-label="Steps"><img src="img/harbor/btn-steps-day.webp" alt="" width="172" height="180"></button>
+        <button class="port" id="port-done" style="--x:70.48%" aria-label="Done"><img src="img/harbor/btn-done-day.webp" alt="" width="172" height="180"></button>
+      </div>
+      <button class="boone-spot" id="boone-spot" aria-label="Boone"></button>
+      <button class="look-up" id="look-up" hidden>Look up tonight.</button>
+      <div class="undo-note" id="undo-note" hidden><i id="undo-word">Done</i><button id="undo">Undo</button></div>
+      <div class="talk" id="talk" hidden><span class="talk-name" id="talk-name">Boone</span><p id="talk-words"></p><button class="talk-go" id="talk-close" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </div>
+    <div class="day-bar">
+      <p class="day-label"><b>Boone&rsquo;s Day</b> <span id="pose-line">He catches about one fish. Keith gets most of it.</span></p>
+      <div class="hours" id="hours" role="group" aria-label="Pick an hour on the dock"></div>
+      <button class="still" id="still" aria-pressed="false">Still the Harbor</button>
     </div>
   </div>
-  <ul class="mates">
-    <li><img src="img/crew/keith.webp" alt="" width="129" height="180" loading="lazy"><h3>Keith</h3><p>A gull. Helps you get started. Says one word: &ldquo;Mine.&rdquo;</p></li>
-    <li><img src="img/crew/mabel.webp" alt="" width="240" height="240" loading="lazy"><h3>Mabel</h3><p>A sea turtle. Keeps time by moments, like &ldquo;After breakfast.&rdquo;</p></li>
-    <li><img src="img/crew/clem.webp" alt="" width="240" height="240" loading="lazy"><h3>Clem</h3><p>A hermit crab. Remembers things and runs the shell stall.</p></li>
-    <li><img src="img/crew/teddy.webp" alt="" width="149" height="180" loading="lazy"><h3>Teddy</h3><p>A shy little dog. Keeps you company on hard days.</p></li>
-  </ul>
 </section>
+
+<section class="arrival" id="arrival">
+  <div class="arrival-words">
+    <h2>A Letter Found You.</h2>
+    <p>A letter brought you here. Nobody signed it.</p>
+    <button class="btn" id="open-letter">Open</button>
+    <a class="btn soft" id="set-sail" href="#crew-talk" hidden>Set Sail</a>
+  </div>
+  <figure class="letter-room" id="letter-room">
+    <img class="room shut" src="img/arrival/envelope-room.webp" alt="A sealed envelope marked For You, on a windowsill at sunset" width="720" height="900" loading="lazy">
+    <img class="room open" src="img/arrival/letter-open-room.webp" alt="" width="720" height="900" loading="lazy">
+    <figcaption class="sr" id="letter-text" hidden>There's a harbor where the water rests between tides. Nobody hurries there. A walrus keeps the dock. He'll catch your rope. Room in the loft. Lantern's on.</figcaption>
+  </figure>
+</section>
+
+<section class="crew-talk" id="crew-talk">
+  <h2>Meet the Crew.</h2>
+  <p class="crew-sub">Tap someone to say hello.</p>
+  <div class="crew-pick" role="tablist" aria-label="The crew" id="crew-pick"></div>
+  <div class="crew-card" id="crew-card" role="tabpanel" aria-live="polite"></div>
+</section>
+
+<section class="sketch" id="sketch">
+  <div class="sketch-words">
+    <h2>Clem Sketches You.</h2>
+    <p>At check-in, Clem draws you for your Passport. Pick from 18 skin tones and 17 hairstyles, plus head coverings, glasses, hearing aids and more. Every look is free.</p>
+    <div class="talk inline"><span class="talk-name">Clem</span><p id="clem-words">Three quick picks, then I&rsquo;ll sketch you.</p></div>
+    <button class="btn" id="sketch-another">Sketch Another</button>
+  </div>
+  <div class="passport" aria-label="A Passport page with a sketch from Clem" role="img">
+    <div class="pp-page">
+      <div class="pp-photo"><img id="sketch-img" src="img/sketch/s1.webp" alt="" width="360" height="419" loading="lazy"></div>
+      <dl class="pp-fields">
+        <div><dt>Name</dt><dd>You</dd></div>
+        <div><dt>Ship Name</dt><dd>The Steady Kettle</dd></div>
+        <div><dt>Crew Since</dt><dd id="crew-since">Today</dd></div>
+      </dl>
+      <span class="stamp" aria-hidden="true">Arrived</span>
+    </div>
+  </div>
+</section>
+
 <section class="how" id="how">
   <h2>Your Cards and Binder.</h2>
   <div class="shots">
-    <div class="shot"><div class="art art-steps" role="img" aria-label="The Shower card split into three small steps"><div class="tcard "><img src="img/cards/shower.webp" alt="" width="288" height="288" loading="lazy"><b>Shower</b></div><ul class="steplist"><li><img src="img/cards/step-put-a-towel-and-clean-clothes-nearby.webp" alt="" width="288" height="288" loading="lazy">Put a Towel Nearby</li><li><img src="img/cards/step-wash-your-hair.webp" alt="" width="288" height="288" loading="lazy">Wash Your Hair</li><li><img src="img/cards/step-wash-your-body.webp" alt="" width="288" height="288" loading="lazy">Wash Your Body</li></ul></div><h3>Big Card? Chart Steps.</h3><p>It splits a card into small steps, each with a picture.</p></div>
+    <div class="shot"><div class="art art-steps" role="img" aria-label="The Shower card split into three small steps"><div class="tcard "><img src="img/cards/shower.webp" alt="" width="288" height="288" loading="lazy"><b>Shower</b></div><ul class="steplist"><li><img src="img/cards/step-put-a-towel-and-clean-clothes-nearby.webp" alt="" width="288" height="288" loading="lazy">Set Out a Towel</li><li><img src="img/cards/step-wash-your-hair.webp" alt="" width="288" height="288" loading="lazy">Wash Your Hair</li><li><img src="img/cards/step-wash-your-body.webp" alt="" width="288" height="288" loading="lazy">Wash Your Body</li></ul></div><h3>Big Card? Chart Steps.</h3><p>It splits a card into small steps, each with a picture.</p></div>
     <div class="shot"><div class="art art-hard" role="img" aria-label="The Shower card with a smaller version, Wipes and Fresh Clothes, that counts as a shower"><div class="tcard behind"><img src="img/cards/shower.webp" alt="" width="288" height="288" loading="lazy"><b>Shower</b></div><div class="tcard front"><img src="img/cards/put-on-clean-clothes.webp" alt="" width="288" height="288" loading="lazy"><b>Wipes and Fresh Clothes</b><span class="counts">Counts as Shower</span></div></div><h3>Hard Day? Go Smaller.</h3><p>Many cards have a smaller version that still counts.</p></div>
     <div class="shot"><div class="art art-edges" role="img" aria-label="Three cards with Silver, Gold and Holo edges"><div class="tcard silver"><img src="img/cards/coffee.webp" alt="" width="288" height="288" loading="lazy"><b>Coffee</b><span class="edge-tag">Silver</span></div><div class="tcard gold"><img src="img/cards/water-plants.webp" alt="" width="288" height="288" loading="lazy"><b>Water Plants</b><span class="edge-tag">Gold</span></div><div class="tcard holo"><img src="img/cards/wash-dishes.webp" alt="" width="288" height="288" loading="lazy"><b>Wash Dishes</b><span class="edge-tag">Holo</span></div></div><h3>Your Binder Fills Up.</h3><p>Cards you finish earn shiny edges that never fade.</p></div>
   </div>
@@ -104,13 +151,11 @@
 </section>
 <section class="alive" id="harbor">
   <h2>A Harbor That&rsquo;s Alive.</h2>
-  <p class="alive-sub">Boone keeps your hours, from morning coffee to lantern light. Add your ZIP code and the harbor gets your weather, sunrise, sunset and moon.</p>
-  <ul class="boone-day">
-    <li><img src="img/day/coffee-day.webp" alt="" width="300" height="285" loading="lazy"><span>Coffee</span></li>
-    <li><img src="img/day/fishing-day.webp" alt="" width="300" height="285" loading="lazy"><span>Fishing</span></li>
-    <li><img src="img/day/reading-day.webp" alt="" width="300" height="285" loading="lazy"><span>Reading</span></li>
-    <li class="night"><img src="img/day/lantern-night.webp" alt="" width="300" height="285" loading="lazy"><span>Lantern</span></li>
-    <li class="night"><img src="img/day/sleeping-night.webp" alt="" width="300" height="285" loading="lazy"><span>Sleeping</span></li>
+  <ul class="tiles">
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg><h3>Your Sky</h3><p>Add your ZIP code and the dock gets your weather, sunrise and sunset. The moon is the real one.</p><p class="moon-now" id="moon-now"></p></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.17 3.24 1.18-6.87-5-4.86 6.9-1 3.09-6.26 3.09 6.26 6.9 1-5 4.86 1.18 6.87z"/></svg><h3>Shooting Stars</h3><p>Some nights a note on the dock says &ldquo;Look up tonight.&rdquo; It&rsquo;s worth it.</p></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4"/><path d="M4 16l8 4 8-4"/></svg><h3>Smart Stacks</h3><p>Boone learns your preferences to help plan your day. It stays on your phone, and you can turn it off.</p></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg><h3>Routines</h3><p>Save My Day as a Routine, and those cards come back in one tap.</p></li>
   </ul>
 </section>
 <section data-e="e54" data-c="e54" class="trust">
@@ -121,7 +166,7 @@
   <div data-e="e56" data-c="e56" class="paper">
     <span data-e="e57" class="tape"></span>
     <img data-e="e58" class="crew-boone" src="img/boone-hello.webp" alt="" width="360" height="360" loading="lazy">
-    <h2 data-e="e59">Boone Needs a Crew.</h2>
+    <h2 data-e="e59">Join the Crew.</h2>
     <div data-e="e60" data-c="e60" id="test-ask">
       <ul data-e="e61" class="chips crew-facts"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>iPhone</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>10 min a day</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>2 weeks</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>18+ in the US</li></ul>
       <a data-e="e62" class="btn" href="/test.html">Help Test Boone</a>
@@ -158,7 +203,10 @@
   <p data-e="e86" class="fine marks">iPhone is a trademark of Apple Inc. Android is a trademark of Google LLC. The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.</p>
 </footer>
 
-<script data-e="e80" src="site.js?v=1792988539"></script>
+<script data-e="e80" src="site.js?v=1793077776"></script>
+<script src="harbor.js?v=1793077776"></script>
+<script src="deck.js?v=1793077776"></script>
+<script src="story.js?v=1793077776"></script>
 <script data-goatcounter="https://boone.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
