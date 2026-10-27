@@ -20,8 +20,8 @@ const HOURS = [
 ];
 // Where Boone stands in each scene (left, top, right, bottom of 840 x 1440).
 const BOONE_AT = {
-  7: [620, 1042, 760, 1242], 9: [290, 1106, 430, 1306], 11: [236, 1147, 376, 1347], 13: [280, 1203, 420, 1403],
-  14: [523, 955, 663, 1155], 16: [251, 1087, 391, 1287], 18: [327, 1197, 467, 1397], 19: [265, 1122, 405, 1322],
+  7: [620, 1042, 760, 1242], 9: [290, 1106, 430, 1306], 11: [285, 1060, 405, 1235], 13: [280, 1203, 420, 1403],
+  14: [523, 955, 663, 1155], 16: [307, 1205, 447, 1405], 18: [327, 1197, 467, 1397], 19: [265, 1122, 405, 1322],
   21: [307, 1132, 447, 1332], 23: [277, 1021, 417, 1221],
 };
 // The pose for a clock hour, by the same table the app uses.
@@ -39,7 +39,7 @@ let now = poseFor(new Date().getHours());
 
 function showHour(hour) {
   now = hour;
-  scene.src = `img/harbor/h${hour.at}.webp`;
+  scene.src = `img/harbor/h${hour.at}.webp?v=2`;
   harbor.classList.toggle('night', Boolean(hour.night));
   document.querySelectorAll('.port img').forEach((img) => {
     img.src = img.src.replace(/-(day|night)\.webp$/, `-${hour.night ? 'night' : 'day'}.webp`);
@@ -66,7 +66,7 @@ for (const hour of HOURS) {
   hours.appendChild(chip);
 }
 // Preload the other hours once the page has settled, so switching is instant.
-window.addEventListener('load', () => setTimeout(() => HOURS.forEach((hour) => { new Image().src = `img/harbor/h${hour.at}.webp`; }), 1500));
+window.addEventListener('load', () => setTimeout(() => HOURS.forEach((hour) => { new Image().src = `img/harbor/h${hour.at}.webp?v=2`; }), 1500));
 
 // Boone's talk box, low on the dock like in the app.
 const talk = document.getElementById('talk');
