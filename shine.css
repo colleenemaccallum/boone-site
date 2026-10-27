@@ -1,0 +1,185 @@
+/* The playable homepage: the harbor window, the letter, the crew's talk boxes, Clem's sketch. */
+[hidden] { display: none !important; }
+@font-face { font-family: 'Patrick Hand'; src: url(fonts/patrick-hand.woff2) format('woff2'); font-display: swap; }
+
+/* The harbor window: the app's dock at one hour, with the card stack and portholes on top. */
+@media (min-width: 861px) { .hero { grid-template-columns: 1fr minmax(0, 420px); } }
+.harbor-wrap { width: 100%; max-width: 440px; margin: 0 auto; }
+.harbor {
+  position: relative; aspect-ratio: 840 / 1440; container-type: inline-size; overflow: hidden;
+  border-radius: 28px; border: 3px solid var(--navy); background: var(--sky-deep);
+  box-shadow: 0 6px 0 var(--lip), 0 18px 40px rgba(36, 64, 92, .25); touch-action: pan-y;
+}
+.harbor .scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.sky { position: absolute; inset: 0 0 60% 0; pointer-events: none; z-index: 2; }
+
+.deck { position: absolute; left: 18.33%; top: 6.4%; width: 63.33%; height: 46.1%; }
+.hcard {
+  position: absolute; inset: 0; background: #fcfaf4; border: 2px solid #dce3ec; border-radius: 6cqw;
+  box-shadow: 0 1.2cqw 0 rgba(36, 64, 92, .12), 0 3cqw 6cqw rgba(16, 26, 48, .22);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2cqw; padding: 4cqw;
+  font: 700 6.4cqw/1.15 var(--sans); color: var(--ink); text-align: center; user-select: none;
+  transition: transform .26s ease, opacity .26s ease; touch-action: pan-y; cursor: grab;
+}
+.hcard img { width: 58%; height: auto; pointer-events: none; }
+.hcard.peek { transform: translateY(-6.5%) scale(.9); transform-origin: top center; justify-content: flex-start; padding-top: 1.6cqw; font-size: 3.4cqw; z-index: 0; }
+.hcard.peek > :not(b) { visibility: hidden; height: 0; }
+.hcard.peek > b { order: -1; }
+.hcard.front { z-index: 1; }
+.hcard.dragging { transition: none; cursor: grabbing; }
+.hcard.gone-right { transform: translateX(130%) rotate(14deg); opacity: 0; }
+.hcard.gone-left { transform: translateX(-130%) rotate(-14deg); opacity: 0; }
+.hcard.small-already { animation: nod .45s ease; }
+@keyframes nod { 30% { transform: rotate(-2deg); } 70% { transform: rotate(2deg); } }
+.step-of { position: absolute; top: 3.5cqw; left: 4cqw; right: 4cqw; font: 700 3.1cqw/1.2 var(--sans); color: var(--muted); }
+.time-chip { font: 700 3.4cqw/1 var(--sans); color: var(--navy); background: var(--soft); border-radius: 99px; padding: 1.6cqw 3cqw; }
+.time-card {
+  position: absolute; inset: 0; border-radius: inherit; background: #fcfaf4; display: grid; gap: 2.4cqw; align-content: center; padding: 6cqw;
+}
+.time-card b { font: 600 6.4cqw/1 var(--serif); color: var(--navy); margin-bottom: 1cqw; }
+.time-card button, .deal {
+  font: 700 4.2cqw/1.2 var(--sans); color: var(--navy); background: var(--soft); border: 0; border-radius: 3cqw; padding: 3cqw; cursor: pointer;
+  box-shadow: 0 .8cqw 0 var(--soft-lip);
+}
+.hcard.quiet { cursor: default; gap: 3cqw; }
+.quiet-title { font: 600 7cqw/1.1 var(--serif); color: var(--navy); }
+.hcard.quiet p { font: 400 4.4cqw/1.4 var(--sans); margin: 0; color: var(--ink); }
+.deal { background: var(--blue); color: #fff; box-shadow: 0 .8cqw 0 var(--lip); padding: 3cqw 6cqw; }
+
+.port { position: absolute; left: var(--x); top: 55.14%; width: 20.48%; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 40%; }
+.port img { display: block; width: 100%; transition: transform .12s; }
+.port:active img { transform: scale(.94); }
+.boone-spot { position: absolute; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 30%; }
+
+.undo-note {
+  position: absolute; left: 4%; top: 69%; display: flex; align-items: center; gap: 3cqw; background: #fcfaf4; border-radius: 3cqw; padding: 1.6cqw 2.4cqw 1.6cqw 3.4cqw;
+  box-shadow: 0 1.5cqw 4cqw rgba(16, 26, 48, .25); transform: rotate(-2deg);
+}
+.undo-note i { font: 400 6cqw/1 'Patrick Hand', cursive; color: var(--navy); font-style: normal; }
+.undo-note button { font: 700 3.6cqw/1 var(--sans); color: var(--blue); background: none; border: 0; padding: 1.6cqw; cursor: pointer; }
+
+/* Talk boxes, as in the app: a name plaque over a paper box, with an arrow to go on. */
+.talk {
+  position: absolute; left: 22%; right: 3%; top: 79%; z-index: 3; background: #fcfaf4; border: 2px solid #dce3ec; border-radius: 3.4cqw;
+  padding: 4cqw 15cqw 4cqw 4.4cqw; box-shadow: 0 2cqw 5cqw rgba(16, 26, 48, .28); animation: rise .25s ease;
+}
+.talk p { margin: 0; font: 700 4.4cqw/1.3 var(--sans); color: var(--ink); }
+.talk.action p { font-weight: 400; font-style: italic; }
+.talk-name { position: absolute; top: -3.6cqw; left: 3cqw; background: var(--blue); color: #fff; font: 700 3.4cqw/1 var(--sans); padding: 1.2cqw 3cqw; border-radius: 99px; }
+.talk-go { position: absolute; right: 2.6cqw; top: 50%; transform: translateY(-50%); width: 10cqw; height: 10cqw; border-radius: 50%; border: 0; background: var(--blue); cursor: pointer; display: grid; place-items: center; }
+.talk-go svg { width: 55%; fill: none; stroke: #fff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+.talk.inline { position: relative; inset: auto; margin: 22px 0 0; padding: 16px 18px 14px 16px; border-radius: 14px; animation: rise .25s ease; }
+.talk.inline p { font-size: 18px; }
+.talk.inline .talk-name { top: -14px; left: 12px; font-size: 14px; padding: 5px 12px; }
+.talk.inline:has(.talk-go) { padding-right: 64px; }
+.talk.inline .talk-go { width: 42px; height: 42px; right: 10px; }
+
+.look-up {
+  position: absolute; right: 16%; top: 75%; transform: rotate(3deg); background: #fcfaf4; border: 0; border-radius: 2.4cqw; padding: 2.4cqw 3.4cqw;
+  font: 400 5cqw/1 'Patrick Hand', cursive; color: var(--navy); cursor: pointer; box-shadow: 0 1.5cqw 4cqw rgba(36, 64, 92, .45);
+}
+.meteor { position: absolute; width: 12cqw; height: 12cqw; margin: -6cqw; padding: 0; border: 0; background: none; cursor: pointer; pointer-events: auto; animation: glide-left 3s linear forwards, pop .36s ease-out; }
+.meteor b { position: absolute; left: 50%; top: 50%; width: 1.6cqw; height: 1.6cqw; margin: -.8cqw; border-radius: 50%; background: #f3db90; transition: transform .9s, opacity .9s; }
+.meteor i { position: absolute; top: 50%; height: .5cqw; margin-top: -.25cqw; width: 2.6cqw; background: #f3db90; border-radius: 99px; }
+.meteor.left i { left: calc(50% + .6cqw); transform-origin: left; rotate: -41deg; }
+.meteor.left i:nth-child(1) { opacity: .9; } .meteor.left i:nth-child(2) { opacity: .5; translate: 1.96cqw -1.7cqw; } .meteor.left i:nth-child(3) { opacity: .2; translate: 3.92cqw -3.4cqw; }
+.meteor.wished { animation-play-state: paused; pointer-events: none; }
+.meteor.wished b { transform: scale(2.2); opacity: 0; }
+.meteor.wished i { opacity: 0 !important; transition: opacity .3s; }
+.meteor.resting { animation: fade-in .4s ease forwards; }
+@keyframes glide-left { 0% { opacity: 1; translate: 0 0; } 87% { opacity: 1; } 100% { opacity: 0; translate: -10cqw 8.7cqw; } }
+@keyframes pop { 0% { scale: .3; } 70% { scale: 1.35; } 100% { scale: 1; } }
+@keyframes fade-in { from { opacity: 0; } }
+
+.day-bar { margin-top: 18px; }
+.day-label { margin: 0 0 10px; font-size: 16px; line-height: 1.4; color: var(--muted); min-height: 2.8em; }
+.day-label b { color: var(--navy); font-family: var(--serif); font-size: 18px; display: block; }
+.hours { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 10px; scroll-snap-type: x proximity; scrollbar-width: thin; }
+.hours button, .still {
+  flex: 0 0 auto; scroll-snap-align: start; border: 2px solid var(--edge); background: var(--paper); border-radius: 14px; padding: 8px 12px; cursor: pointer;
+  font: 400 13px/1.2 var(--sans); color: var(--muted); display: grid; gap: 2px; text-align: center;
+}
+.hours b { font-size: 15px; color: var(--navy); }
+.hours button[aria-pressed="true"] { border-color: var(--navy); background: var(--navy); color: #dfe7f0; }
+.hours button[aria-pressed="true"] b { color: #fff; }
+.still { display: inline-block; margin-top: 6px; font-weight: 700; font-size: 14px; color: var(--navy); }
+.still[aria-pressed="true"] { background: var(--soft); }
+
+/* The letter. */
+.arrival, .crew-talk, .sketch, .alive { max-width: 1040px; margin: 0 auto; padding: 64px 20px; }
+.arrival { display: grid; grid-template-columns: 1fr minmax(0, 380px); gap: 48px; align-items: center; }
+.arrival p, .sketch p, .crew-sub { font-size: 20px; margin: 0 0 20px; }
+.letter-room { position: relative; margin: 0; aspect-ratio: 720 / 900; border-radius: 24px; overflow: hidden; box-shadow: 0 14px 30px rgba(36, 64, 92, .2); }
+.letter-room img { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity .5s ease; }
+.letter-room .open, .letter-room.opened .shut { opacity: 0; }
+.letter-room.opened .open { opacity: 1; }
+
+/* The crew picker and their cards. */
+.crew-talk { text-align: center; }
+.crew-pick { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 8px 0 24px; }
+.crew-pick button { border: 3px solid transparent; background: none; padding: 4px; border-radius: 22px; cursor: pointer; display: grid; gap: 4px; font: 700 15px/1 var(--sans); color: var(--navy); }
+.crew-pick img { width: 84px; height: 84px; border-radius: 18px; background: var(--sky); object-fit: contain; padding: 6px; }
+.crew-pick [aria-selected="true"] { border-color: var(--navy); background: var(--sky); }
+.crew-card {
+  display: grid; grid-template-columns: 160px 1fr; gap: 6px 24px; text-align: left; max-width: 680px; margin: 0 auto; padding: 24px;
+  background: var(--paper); border: 2px solid var(--edge); border-radius: 24px; box-shadow: 0 10px 24px rgba(36, 64, 92, .12);
+}
+.mate-photo { width: 160px; border-radius: 20px; background: var(--sky); }
+.mate-facts h3 { font: 600 30px/1.1 var(--serif); color: var(--navy); margin: 4px 0 0; }
+.mate-facts p { margin: 6px 0 0; font-size: 17px; }
+.mate-facts .job { font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-size: 14px; margin-top: 2px; }
+.mate-talk { grid-column: 1 / -1; }
+.mate-talk .way { font-style: italic; margin: 18px 0 0; font-size: 18px; }
+.replies { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 12px; }
+.replies button { font: 700 17px/1.2 var(--sans); background: var(--blue); color: #fff; border: 0; border-radius: 14px; padding: 12px 16px; cursor: pointer; box-shadow: 0 3px 0 var(--lip); }
+.you-said { text-align: right; margin: 12px 0 0 auto; width: fit-content; background: var(--soft); border-radius: 14px; padding: 10px 14px; font-weight: 700; }
+
+/* Clem's sketch on a Passport page. */
+.sketch { display: grid; grid-template-columns: 1fr minmax(0, 400px); gap: 48px; align-items: center; }
+.sketch .btn { margin-top: 20px; }
+.passport { text-align: left; background: #2c4a74; border-radius: 26px; padding: 18px; box-shadow: 0 6px 0 var(--lip), 0 16px 30px rgba(36, 64, 92, .25); }
+.pp-page { position: relative; background: #fff8ea; border: 3px solid #4a2e1c; border-radius: 16px; padding: 22px; display: grid; grid-template-columns: 44% 1fr; gap: 18px; align-items: start;
+  background-image: repeating-linear-gradient(transparent 0 26px, rgba(47, 95, 138, .08) 26px 27px); }
+.pp-photo { position: relative; background: #2c4a74; outline: 2px solid #f2ae3a; outline-offset: -6px; border: 3px solid #4a2e1c; border-radius: 12px; padding: 8px; }
+.pp-photo img { display: block; width: 100%; aspect-ratio: 360 / 420; object-fit: contain; background: #fff8ea; border-radius: 6px; transition: opacity .18s; }
+.pp-photo img.redraw { opacity: 0; }
+.pp-fields { margin: 0; display: grid; gap: 12px; }
+.pp-fields dt { font: 700 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.pp-fields dd { margin: 4px 0 0; font: 700 19px/1.2 var(--sans); color: var(--navy); border-bottom: 1px solid rgba(47, 95, 138, .25); padding-bottom: 6px; }
+.stamp { position: absolute; right: -16px; bottom: -16px; background: #fff8ea; transform: rotate(-8deg); border: 4px solid #3f6496; color: #3f6496; border-radius: 50%; width: 92px; height: 92px; display: grid; place-items: center; font: 700 14px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
+
+/* The harbor's other touches. */
+.alive { text-align: center; }
+.tiles { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; text-align: left; }
+.tiles li { background: var(--paper); border: 2px solid var(--edge); border-radius: 22px; padding: 20px; }
+.tiles .ico { width: 34px; height: 34px; fill: none; stroke: var(--navy); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tiles h3 { font: 600 22px/1.2 var(--serif); color: var(--navy); margin: 8px 0 6px; }
+.tiles p { margin: 0; font-size: 17px; }
+.tiles .moon-now { margin-top: 10px; font-weight: 700; color: var(--navy); }
+
+@media (min-width: 861px) { .hours { flex-wrap: wrap; overflow: visible; } }
+@media (max-width: 960px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 860px) {
+  .arrival, .sketch { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+  .letter-room { max-width: 380px; margin: 0 auto; width: 100%; }
+  .passport { max-width: 400px; margin: 0 auto; width: 100%; }
+  .sketch .talk.inline { text-align: left; }
+  .arrival, .crew-talk, .sketch, .alive { padding: 44px 16px; }
+}
+@media (max-width: 560px) {
+  .tiles { grid-template-columns: 1fr; }
+  .crew-card { grid-template-columns: 96px 1fr; padding: 18px; }
+  .mate-photo { width: 96px; }
+  .crew-pick img { width: 50px; height: 50px; border-radius: 14px; }
+  .crew-pick { gap: 2px; flex-wrap: nowrap; }
+  .crew-pick button { font-size: 14px; }
+  .pp-page { padding: 14px; gap: 12px; }
+  .pp-fields dd { font-size: 16px; }
+  .stamp { width: 64px; height: 64px; font-size: 10px; right: -12px; bottom: -12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hcard, .letter-room img, .pp-photo img { transition: none; }
+  .talk, .talk.inline, .hcard.small-already { animation: none; }
+}
+.hero > * { min-width: 0; }
