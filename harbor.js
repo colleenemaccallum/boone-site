@@ -20,9 +20,9 @@ const HOURS = [
 ];
 // Where Boone stands in each scene (left, top, right, bottom of 840 x 1440).
 const BOONE_AT = {
-  7: [620, 1042, 760, 1242], 9: [290, 1106, 430, 1306], 11: [285, 1060, 405, 1235], 13: [280, 1203, 420, 1403],
-  14: [523, 955, 663, 1155], 16: [307, 1205, 447, 1405], 18: [327, 1197, 467, 1397], 19: [265, 1122, 405, 1322],
-  21: [307, 1132, 447, 1332], 23: [277, 1021, 417, 1221],
+  7: [625, 1065, 765, 1245], 9: [275, 1140, 420, 1350], 11: [551, 1038, 768, 1250], 13: [305, 1200, 450, 1395],
+  14: [384, 998, 560, 1184], 16: [305, 1200, 450, 1395], 18: [305, 1200, 460, 1395], 19: [262, 1150, 400, 1345],
+  21: [252, 1140, 430, 1345], 23: [529, 1042, 746, 1254],
 };
 // The pose for a clock hour, by the same table the app uses.
 const poseFor = (hour) => {
@@ -39,18 +39,15 @@ let now = poseFor(new Date().getHours());
 
 function showHour(hour) {
   now = hour;
-  scene.src = `img/harbor/h${hour.at}.webp?v=2`;
+  scene.src = `img/harbor/h${hour.at}.webp?v=3`;
   harbor.classList.toggle('night', Boolean(hour.night));
   document.querySelectorAll('.port img').forEach((img) => {
-    img.src = img.src.replace(/-(day|night)\.webp$/, `-${hour.night ? 'night' : 'day'}.webp`);
+    img.src = img.src.replace(/-(day|night)\.webp/, `-${hour.night ? 'night' : 'day'}.webp`);
   });
   const [left, top, right, bottom] = BOONE_AT[hour.at];
   Object.assign(booneSpot.style, { left: `${(left / 840) * 100}%`, top: `${(top / 1440) * 100}%`, width: `${((right - left) / 840) * 100}%`, height: `${((bottom - top) / 1440) * 100}%` });
-  // The talk box sits low on the dock beside Boone, on his roomier side, never over him.
-  const roomLeft = left / 840;
-  const roomRight = 1 - right / 840;
-  const side = roomLeft > roomRight ? { left: '3%', right: `${(1 - roomLeft) * 100 + 2}%` } : { left: `${(right / 840) * 100 + 2}%`, right: '3%' };
-  Object.assign(talk.style, side, { top: `${Math.min((top / 1440) * 100 + 4, 80)}%` });
+  // The talk box sits just above Boone, across the dock, never over him.
+  Object.assign(talk.style, { left: '6%', right: '6%', top: 'auto', bottom: `${100 - (top / 1440) * 100 + 1.5}%` });
   poseLine.textContent = hour.story;
   hours.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.at === String(hour.at))));
   closeTalk();
@@ -66,7 +63,7 @@ for (const hour of HOURS) {
   hours.appendChild(chip);
 }
 // Preload the other hours once the page has settled, so switching is instant.
-window.addEventListener('load', () => setTimeout(() => HOURS.forEach((hour) => { new Image().src = `img/harbor/h${hour.at}.webp?v=2`; }), 1500));
+window.addEventListener('load', () => setTimeout(() => HOURS.forEach((hour) => { new Image().src = `img/harbor/h${hour.at}.webp?v=3`; }), 1500));
 
 // Boone's talk box, low on the dock like in the app.
 const talk = document.getElementById('talk');
