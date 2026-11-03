@@ -16,7 +16,7 @@
 <body>
 <main>
 <header><a href="/" aria-label="Boone home"><img src="/pages-boone.png" alt=""></a><h1>Boone Privacy Policy</h1></header>
-<p class="updated">Last updated: October 26, 2026</p>
+<p class="updated">Last updated: November 3, 2026</p>
 
 <p>Boone is a visual schedule app: picture cards for your day, one at a time. We built it so your day stays on your phone, not on our computers. This policy explains the small amount of information that does leave your phone, why, and what happens to it.</p>
 <p>Boone is run by Colleen MacCallum ("we", "us"), in Naples, Florida, United States. Questions: <a href="mailto:support@getboone.app">support@getboone.app</a>.</p>
@@ -33,7 +33,7 @@
 </div>
 
 <h2>1. What Stays on Your Phone</h2>
-<p>Your cards, schedule, done counts, Binder, stickers, presents, Another Day, your Passport, settings and everything else you create are saved only on your phone. We can't see them.</p>
+<p>Your cards, schedule, done counts, Scrapbook, stickers, presents, Another Day, your Passport, settings and everything else you create are saved only on your phone. We can't see them.</p>
 <p><strong>Phone backups.</strong> Like most apps, Boone's data is included in your phone's own backup (iCloud on iPhone, Google backup on Android) if you have that turned on. Apple or Google handle that backup under their own privacy terms. We can't see it.</p>
 <p><strong>Backup files.</strong> In Settings you can <strong>Save a backup file</strong> and put it wherever you choose (for example Files, iCloud Drive or Google Drive). That file contains your cards and progress. It's yours: we never receive it. Anyone you give it to could read it.</p>
 
@@ -56,19 +56,22 @@
 <li>To enforce the daily limit and stop abuse, our server keeps a count of requests for each random code and each internet (IP) address for up to 2 days, then deletes it. These counts are stored with <strong>Upstash</strong>, our database provider. They hold only numbers, never your card text.</li>
 <li>Our server runs on <strong>Expo's EAS Hosting</strong>. Like any web host, it automatically keeps basic records of each request (such as the time, your internet address, the type of device and whether the request worked) for security and troubleshooting. These records don't include your card text.</li>
 </ul>
-<p><strong>What Anthropic does with it.</strong> Anthropic processes the card name only to write the suggested steps for us. Under Anthropic's commercial terms, Anthropic doesn't use this content to train its models. Anthropic deletes it within 30 days, though it may keep content longer if its safety systems flag it. See <a href="https://privacy.claude.com">privacy.claude.com</a>.</p>
+<p><strong>What Anthropic does with it.</strong> Anthropic processes the card and step names only to write the suggested steps for us. Under Anthropic's commercial terms, Anthropic doesn't use this content to train its models. Anthropic usually deletes it within 30 days, though it may keep content longer when the law requires it or its safety systems flag it. See <a href="https://privacy.claude.com">privacy.claude.com</a>.</p>
 <p><strong>Please don't put private details in card names you break down,</strong> like full names, addresses, account numbers or medical details. "Call the pharmacy" works just as well as the pharmacy's name and your prescription.</p>
 <p><strong>If a card sounds like you're going through something really hard,</strong> Boone doesn't send steps. It shows a kind message with a crisis line (in the US, call or text 988). We don't save, flag or report this, and it doesn't count as one of your free uses of Chart Steps.</p>
-<p><strong>Report these steps.</strong> If suggested steps are wrong or upsetting, you can tap <strong>Report these steps</strong>. Your email app opens with a message to us holding the card's name and the suggested steps, with room for your reason. You see all of it, and nothing is sent unless you send the email yourself.</p>
+<p><strong>Report These Steps.</strong> If suggested steps are wrong or upsetting, you can tap <strong>Report These Steps</strong>. Your email app opens with a message to us holding the card's name and the suggested steps, with room for your reason. You see all of it, and nothing is sent unless you send the email yourself.</p>
 
 <h3>Dock Weather (Only If You Add a ZIP Code)</h3>
-<p>You can add a US ZIP code, on your Passport or in Settings, so Boone's harbor shows your weather, sunrise, sunset and moon. When you do, Boone sends only that ZIP code to our server. Our server looks up roughly where the ZIP code is (to about 10 km) and asks the US National Weather Service (api.weather.gov) for the coming hour, sending that rough spot, never your ZIP code. It sends back one word, like "rain", and the rough spot so your phone can work out sunrise and sunset.</p>
+<p>You can add a US ZIP code, on your Passport or in Settings, so Boone's harbor shows your weather, sunrise, sunset and moon. When you do, Boone sends only that ZIP code to our server, when Boone opens (if it hasn't checked in the last half hour) and about every half hour while it's open. Our server looks up roughly where the ZIP code is (to about 10 km) and asks the US National Weather Service (api.weather.gov) for the coming hour, sending that rough spot, never your ZIP code. It sends back one word, like "rain", and the rough spot so your phone can work out sunrise and sunset.</p>
 <p>We never save or log your ZIP code. Our server holds the latest answer for each ZIP code in memory for up to 30 minutes, so nearby phones don't all ask the Weather Service, and then forgets it. Without a ZIP code nothing is sent, and the harbor has its own weather. You can remove your ZIP code in Settings at any time.</p>
 <h3>Crash Reports</h3>
 <p>If Boone hits an error, it sends a crash report to <strong>Sentry</strong>, a service that helps us find and fix bugs. A report includes things like your phone model, system version, Boone's version, the screen you were on and the technical error. <strong>Boone removes the text of your cards, steps and notes before a report is sent.</strong> Crash reports aren't linked to your name or the random Chart Steps code, and they are deleted within 90 days.</p>
 
 <h3>Send Feedback</h3>
-<p>If you tap <strong>Send feedback</strong>, your email app opens with a message to us. We receive whatever you choose to write and your email address, and use them only to reply and improve Boone. We keep feedback emails until the matter is resolved, and no longer than 2 years.</p>
+<p>If you tap <strong>Send Feedback</strong>, your email app opens with a message to us. We receive whatever you choose to write and your email address, and use them only to reply and improve Boone. We keep feedback emails until the matter is resolved, and no longer than 2 years.</p>
+
+<h3>The iPhone Test (TestFlight)</h3>
+<p>Apple's TestFlight shares with us how many times you install and open the test version, crash reports, your phone's model, system version and language and a device code, and any feedback or screenshots you send through TestFlight. If we invited you by email, we also see your name and that email. If you joined through a public link, Apple doesn't show us your name or email. A screenshot can show your card names, so check it before you send it. We use this only to fix and improve Boone.</p>
 
 <h2>3. What We Don't Do</h2>
 <ul>
@@ -84,7 +87,7 @@
 <ul>
 <li><strong>Visit counts:</strong> the site uses <strong>GoatCounter</strong> to count page views and taps on a few buttons. It records the page, the site that sent you, your browser and screen size, and your country. It uses no cookies, doesn't store your internet address, and doesn't follow you to other sites. Our Consumer Health Data page doesn't use it.</li>
 <li><strong>Email sign-up:</strong> if you tap <strong>Keep me posted</strong>, your email address goes to <strong>Kit</strong>, our email service, so we can send you a few short notes. Kit may record whether you open an email or tap a link in it. Every email has an unsubscribe link.</li>
-<li><strong>Tester sign-up:</strong> if you fill in the tester form, your answers (whether you're 18 or older, first name, email, which phone you use, how you keep track of things now if you answer, and whether you want launch emails) go to <strong>Jotform</strong>, our form service. If you came from a link with a word in it, like ?from=reddit, that word goes with your answers so we know where testers hear about Boone. We use your answers only to invite you to the test. If you tick the box for launch emails, we add your first name and email to Kit.</li>
+<li><strong>Tester sign-up:</strong> the test runs on iPhone, through Apple's free <strong>TestFlight</strong> app. If you fill in the tester form, your answers (whether you're 18 or older and live in the US, first name, email, which phone you use, how you keep track of things now if you answer, and whether you want launch emails) go to <strong>Jotform</strong>, our form service. If you came from a link with a word in it, like ?from=reddit, that word goes with your answers so we know where testers hear about Boone. We use your answers only to pick testers and run the test, and your form answers are deleted within 90 days of launch. If you tick the box for launch emails, we add your first name and email to Kit.</li>
 <li><strong>Tips:</strong> the Support Boone link goes to Ko-fi, which has its own privacy policy.</li>
 </ul>
 <p>To be removed from any of these, email <a href="mailto:support@getboone.app">support@getboone.app</a>.</p>
@@ -92,14 +95,14 @@
 <h2>5. Your Choices and Deleting Your Data</h2>
 <ul>
 <li><strong>Delete everything Boone saved on your phone:</strong> delete the app. Copies inside your phone's backup are removed under Apple's or Google's backup rules. Backup files you saved yourself stay where you put them until you delete them.</li>
-<li><strong>Clear today:</strong> "Clear My Day" moves today's cards to Another Day.</li>
+<li><strong>Clear today:</strong> Remove takes a card off today.</li>
 <li><strong>Data on our side:</strong> we don't keep your cards, so there's nothing to delete for them. Daily-limit counts delete themselves within 2 days, and crash reports within 90 days. Email <a href="mailto:support@getboone.app">support@getboone.app</a> for anything else and we'll answer within 45 days.</li>
-<li><strong>Turn things off:</strong> tap Not Now on the helper note, or simply don't use Chart Steps. Remove your ZIP code in Settings to stop Dock Weather.</li>
+<li><strong>Turn things off:</strong> tap Not Now on the helper note, or simply don't use Chart Steps. If you already tapped Ask the Helper, turn off "Send Card Names to the AI Helper" in Settings and Boone asks you first next time. Turning it back on shows a note first, and the switch stays off unless you tap Turn On. Remove your ZIP code in Settings to stop Dock Weather.</li>
 </ul>
 <p><strong>US state privacy rights.</strong> Depending on your state, you may have the right to know, access, correct or delete personal information, and to opt out of sale, sharing or targeted advertising. We don't do the last three. To use any right, email <a href="mailto:support@getboone.app">support@getboone.app</a>. We won't treat you differently for asking. You can use an authorized agent; we may ask for proof they act for you.</p>
 
 <h2>6. Age</h2>
-<p>Boone is for adults 18 and older (see our <a href="/terms.html">Terms of Use</a>). It isn't designed for children, and we don't knowingly collect information from anyone under 18. If you think someone under 18 has sent us information, email us and we'll delete it.</p>
+<p>Boone is for adults 18 and older (see our <a href="/terms.html">Terms of Use</a>). It isn't designed for children, and we don't knowingly collect information from anyone under 18. Testers in the iPhone test are 18 and older too. If you think someone under 18 has sent us information, email us and we'll delete it.</p>
 
 <h2>7. Security</h2>
 <p>Everything Boone sends travels over an encrypted connection (HTTPS). Our AI key lives only on our server, never in the app. We keep as little as possible, because what we don't keep can't leak.</p>
