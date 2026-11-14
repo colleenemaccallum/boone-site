@@ -429,3 +429,6 @@ footer .marks { max-width: 640px; margin: 10px auto 0; font-size: 12px; line-hei
   .boone-day { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 20px; justify-content: flex-start; margin: 0 -20px; padding: 0 20px 12px; scrollbar-width: none; }
   .boone-day li { flex: 0 0 40%; scroll-snap-align: start; }
 }
+
+/* Hidden until after the beta (Colleen, 2026-11-14): the old swipe demo and the letter arrival. */
+.harbor-wrap[hidden], .arrival[hidden] { display: none !important; }
