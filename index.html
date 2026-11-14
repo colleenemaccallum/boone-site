@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boone: a cozy to-do list app, one picture card at a time</title>
-<meta name="description" content="A free, cozy to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.">
+<title>Boone: a cozy to-do list app, one task at a time</title>
+<meta name="description" content="A free, cozy to-do list for your phone. Each task has its own picture. Plan your day, and break big tasks into small steps.">
 <link rel="canonical" href="https://getboone.app/">
 <meta property="og:title" content="Boone: a cozy harbor for your to-dos">
-<meta property="og:description" content="A free, cozy to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.">
+<meta property="og:description" content="A free, cozy to-do list for your phone. Each task has its own picture. Plan your day, and break big tasks into small steps.">
 <meta property="og:image" content="https://getboone.app/img/share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://getboone.app/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Boone: a cozy harbor for your to-dos">
-<meta name="twitter:description" content="A free, cozy to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.">
+<meta name="twitter:description" content="A free, cozy to-do list for your phone. Each task has its own picture. Plan your day, and break big tasks into small steps.">
 <meta name="twitter:image" content="https://getboone.app/img/share.png">
 <link rel="icon" href="favicon.png">
 <link rel="preload" href="fonts/7b114e24f7.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css?v=1791385613">
-<link rel="stylesheet" href="site.css?v=1793077776">
+<link rel="stylesheet" href="site.css?v=1794000000">
 <link rel="stylesheet" href="shine.css?v=1793077776">
 <script type="application/ld+json">
 [
@@ -27,7 +27,7 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Boone",
-  "description": "A free, cozy to-do list for your phone. Each task is a picture card. See one at a time, swipe it away when done, and break big tasks into small steps.",
+  "description": "A free, cozy to-do list for your phone. Each task has its own picture. Plan your day, and break big tasks into small steps.",
   "url": "https://getboone.app/",
   "operatingSystem": "iOS",
   "applicationCategory": "ProductivityApplication",
@@ -68,14 +68,14 @@
 <section data-e="e4" data-c="e4" class="hero">
   <div data-e="e5" data-c="e5" class="hero-words">
     <h1 data-e="e6">A Cozy Harbor for Your To-Dos.</h1>
-    <p data-e="e7" class="sub">One picture card at a time. Miss a day? It's all good here.</p>
+    <p data-e="e7" class="sub">One task at a time. Miss a day? It's all good here.</p>
     <div data-e="e8" data-c="e8" class="actions">
       <a data-e="e9" class="store" href="/test.html" data-goatcounter-click="tap-help-test"><svg aria-hidden="true" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="14" height="26" rx="3.5"/><path d="M14 7h4"/></svg><span>Help Test on iPhone</span></a>
       <a data-e="e10" class="store soon" href="#crew" aria-label="Android, coming soon. Get launch news."><svg aria-hidden="true" viewBox="0 0 32 32" width="26" height="26"><path fill="currentColor" d="M4 24a12 12 0 0 1 24 0z"/><path stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M9 10.5 6.5 6.5M23 10.5l2.5-4"/><circle cx="11" cy="18.5" r="1.7" fill="#fff"/><circle cx="21" cy="18.5" r="1.7" fill="#fff"/></svg><span>Android</span><span class="soon-tape" aria-hidden="true">Coming Soon</span></a>
     </div>
   </div>
-  <div class="harbor-wrap">
-    <div class="harbor" id="harbor-window" aria-label="Boone's dock. Try the cards." role="region">
+  <div class="harbor-wrap" hidden>
+    <div class="harbor" id="harbor-window" aria-label="Boone's dock. Try a few tasks." role="region">
       <img class="scene" id="scene" src="img/harbor/h14.webp?v=3" alt="" width="840" height="1440" fetchpriority="high">
       <div class="sky" id="sky" aria-hidden="true"></div>
       <div class="deck" id="deck" aria-live="polite"></div>
@@ -98,7 +98,7 @@
   </div>
 </section>
 
-<section class="arrival" id="arrival">
+<section class="arrival" id="arrival" hidden>
   <div class="arrival-words">
     <h2>A Letter Found You.</h2>
     <p>A letter brought you here. Nobody signed it.</p>
@@ -140,14 +140,14 @@
 </section>
 
 <section class="how" id="how">
-  <h2>Your Cards and Binder.</h2>
+  <h2>Your Tasks and Binder.</h2>
   <div class="shots">
-    <div class="shot"><div class="art art-steps" role="img" aria-label="The Shower card split into three small steps"><div class="tcard "><img src="img/cards/shower.webp" alt="" width="288" height="288" loading="lazy"><b>Shower</b></div><ul class="steplist"><li><img src="img/cards/step-put-a-towel-and-clean-clothes-nearby.webp" alt="" width="288" height="288" loading="lazy">Set Out a Towel</li><li><img src="img/cards/step-wash-your-hair.webp" alt="" width="288" height="288" loading="lazy">Wash Your Hair</li><li><img src="img/cards/step-wash-your-body.webp" alt="" width="288" height="288" loading="lazy">Wash Your Body</li></ul></div><h3>Big Card? Chart Steps.</h3><p>It splits a card into small steps, each with a picture.</p></div>
-    <div class="shot"><div class="art art-hard" role="img" aria-label="The Shower card with a smaller version, Wipes and Fresh Clothes, that counts as a shower"><div class="tcard behind"><img src="img/cards/shower.webp" alt="" width="288" height="288" loading="lazy"><b>Shower</b></div><div class="tcard front"><img src="img/cards/put-on-clean-clothes.webp" alt="" width="288" height="288" loading="lazy"><b>Wipes and Fresh Clothes</b><span class="counts">Counts as Shower</span></div></div><h3>Hard Day? Go Smaller.</h3><p>Many cards have a smaller version that still counts.</p></div>
-    <div class="shot"><div class="art art-edges" role="img" aria-label="Three cards with Silver, Gold and Holo edges"><div class="tcard silver"><img src="img/cards/coffee.webp" alt="" width="288" height="288" loading="lazy"><b>Coffee</b><span class="edge-tag">Silver</span></div><div class="tcard gold"><img src="img/cards/water-plants.webp" alt="" width="288" height="288" loading="lazy"><b>Water Plants</b><span class="edge-tag">Gold</span></div><div class="tcard holo"><img src="img/cards/wash-dishes.webp" alt="" width="288" height="288" loading="lazy"><b>Wash Dishes</b><span class="edge-tag">Holo</span></div></div><h3>Your Binder Fills Up.</h3><p>Cards you finish earn shiny edges that never fade.</p></div>
+    <div class="shot"><div class="art art-steps" role="img" aria-label="The Shower task split into three small steps"><div class="tcard "><img src="img/cards/shower.webp" alt="" width="288" height="288" loading="lazy"><b>Shower</b></div><ul class="steplist"><li><img src="img/cards/step-put-a-towel-and-clean-clothes-nearby.webp" alt="" width="288" height="288" loading="lazy">Set Out a Towel</li><li><img src="img/cards/step-wash-your-hair.webp" alt="" width="288" height="288" loading="lazy">Wash Your Hair</li><li><img src="img/cards/step-wash-your-body.webp" alt="" width="288" height="288" loading="lazy">Wash Your Body</li></ul></div><h3>Big Task? Chart Steps.</h3><p>It splits a task into small steps, each with a picture.</p></div>
+    <div class="shot"><div class="art art-hard" role="img" aria-label="The Shower task with a smaller version, Wipes and Fresh Clothes, that counts as a shower"><div class="tcard behind"><img src="img/cards/shower.webp" alt="" width="288" height="288" loading="lazy"><b>Shower</b></div><div class="tcard front"><img src="img/cards/put-on-clean-clothes.webp" alt="" width="288" height="288" loading="lazy"><b>Wipes and Fresh Clothes</b><span class="counts">Counts as Shower</span></div></div><h3>Hard Day? Go Smaller.</h3><p>Some everyday tasks, like Shower, have a smaller version that still counts.</p></div>
+    <div class="shot"><div class="art art-edges" role="img" aria-label="Three tasks with Silver, Gold and Holo edges"><div class="tcard silver"><img src="img/cards/coffee.webp" alt="" width="288" height="288" loading="lazy"><b>Coffee</b><span class="edge-tag">Silver</span></div><div class="tcard gold"><img src="img/cards/water-plants.webp" alt="" width="288" height="288" loading="lazy"><b>Water Plants</b><span class="edge-tag">Gold</span></div><div class="tcard holo"><img src="img/cards/wash-dishes.webp" alt="" width="288" height="288" loading="lazy"><b>Wash Dishes</b><span class="edge-tag">Holo</span></div></div><h3>Your Binder Fills Up.</h3><p>Tasks you keep doing earn shiny edges that never fade.</p></div>
   </div>
   <p class="swipe-hint" aria-hidden="true">Swipe for more</p>
-  <p class="how-note">Over 1,200 ready-made cards. Or make your own.</p>
+  <p class="how-note">Over 1,200 ready-made tasks, or make your own. Or type what's on your mind into Brain Dump, and it's sorted into tasks for you.</p>
 </section>
 <section class="alive" id="harbor">
   <h2>A Harbor That&rsquo;s Alive.</h2>
@@ -155,12 +155,12 @@
     <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg><h3>Your Sky</h3><p>Add your ZIP code and night falls on the harbor at your real sunset. Your weather is coming soon.</p><p class="moon-now" id="moon-now"></p></li>
     <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.17 3.24 1.18-6.87-5-4.86 6.9-1 3.09-6.26 3.09 6.26 6.9 1-5 4.86 1.18 6.87z"/></svg><h3>Shooting Stars</h3><p>Some nights a note on the dock says &ldquo;Look up tonight.&rdquo; It&rsquo;s worth it.</p></li>
     <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4"/><path d="M4 16l8 4 8-4"/></svg><h3>Smart Stacks</h3><p>Boone learns your preferences to help plan your day. It stays on your phone, and you can turn it off.</p></li>
-    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg><h3>Routines</h3><p>Save My Day as a Routine, and those cards come back in one tap.</p></li>
+    <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg><h3>Routines</h3><p>Save today's tasks as a Routine, and they come back in one tap.</p></li>
   </ul>
 </section>
 <section data-e="e54" data-c="e54" class="trust">
   <p data-e="e117" class="promise">Boone will never charge you for having a hard week.</p>
-  <p data-e="e92" class="for-anyone">No account. Your cards stay on your phone. No ads.</p>
+  <p data-e="e92" class="for-anyone">No account. Your tasks stay on your phone. No ads.</p>
 </section>
 <section data-e="e55" data-c="e55" class="crew" id="crew">
   <div data-e="e56" data-c="e56" class="paper">
